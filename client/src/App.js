@@ -2,23 +2,26 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Dummy from './components/dummy'
+
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 
 
 function App() {
+  //using Hooks instead of classes to set state
   const [off,setOff] = useState(false);
-  
+  const [rend,setRend] = useState(true);
+
   const handleClick = () =>{
   off ? setOff(false) : setOff(true);
+  setRend(false);
   }
   
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+      
+      
           <Chip
           avatar={<Avatar>D</Avatar>}
           label="Dummy"
@@ -27,17 +30,11 @@ function App() {
           onClick={handleClick}
           disabled={off}
           />
-        </p>
         
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Dummy rend={rend}/>
+        
+        
+      
     </div>
   );
 }
