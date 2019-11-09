@@ -14,30 +14,24 @@ function App() {
   const [rend1,setRend1] = useState(true);
   const [rend2,setRend2] = useState(true);
   const [rend3,setRend3] = useState(true);
-  const [dum, setDum] = useState([{
-    title: 'Dummy',
-    bol1: true,
-    bol2: false,
-    bol3: false,
-    text: 'Lorem Ipsum arambum noculus ispum lorem aramabos amululant epsum ONE ',
-    img: 'https://i.imgur.com/Gc1NSVZ.png'
-  },{
-    title: 'Dummy2',
-    bol1: false,
-    bol2: true,
-    bol3: false,
-    text: 'Lorem Ipsum arambum noculus ispum lorem aramabos amululant epsum TWO',
-    img: 'https://i.imgur.com/Gc1NSVZ.png'
-  },
-  {
-    title: 'Dummy3',
-    bol1: false,
-    bol2: false,
-    bol3: true,
-    text: 'Lorem Ipsum arambum noculus ispum lorem aramabos amululant epsum THREE',
-    img: 'https://i.imgur.com/Gc1NSVZ.png'
-  }
-])
+  const [offer, setOffer] = useState([{
+    name: 'Andrew Tocchi',
+    contact: 'andrewtocchi@gmail.com',
+    location: 'Oakland',
+    house: true,
+    roomSize: 2,
+    length: '1 month',
+    dog: true,
+    cat: true,
+    med: true,
+    food: true,
+    clothing: true,
+    items: true,
+    couns: true,
+    img: 'https://i.imgur.com/HSdYMMN.jpg',
+    text: 'Lorem Ipsum Canus Noctus Ignus Ambulus Barkus',
+    more: 'No More Info'
+  }])
 
   const handleClick = () =>{
   // off ? setOff(false) : setOff(true);
@@ -59,8 +53,8 @@ function App() {
       
       
           <Chip
-          avatar={<Avatar>D</Avatar>}
-          label="Dummy"
+          avatar={<Avatar>H</Avatar>}
+          label="Housing"
           clickable
           color="primary"
           onClick={handleClick}
@@ -68,8 +62,8 @@ function App() {
           />
 
           <Chip
-          avatar={<Avatar>D2</Avatar>}
-          label="Dummy2"
+          avatar={<Avatar>F</Avatar>}
+          label="Food"
           clickable
           color="primary"
           onClick={handleClick2}
@@ -77,8 +71,8 @@ function App() {
           />
 
           <Chip
-          avatar={<Avatar>D3</Avatar>}
-          label="Dummy3"
+          avatar={<Avatar>C</Avatar>}
+          label="Clothing"
           clickable
           color="primary"
           onClick={handleClick3}
@@ -90,9 +84,11 @@ function App() {
 
 
 
-        {dum.map((item, key) =>
+        {offer.map((item, key) =>
         <Dummy 
-        rend1={rend1} rend2={rend2} rend3={rend3} key={item.title} title={item.title} text={item.text} img={item.img} bol={item.bol1} bol2={item.bol2} bol3={item.bol3}
+         key={item.name} title={item.name} text={item.text} img={item.img} location={item.location}
+         house={item.house} food={item.food} clothing={item.clothing} med={item.med} items={item.items}
+         couns={item.couns}
         />
         )}
         
