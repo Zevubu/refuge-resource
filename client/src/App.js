@@ -77,7 +77,7 @@ function App() {
           onClick={handleClick}
           disabled={off}
           />
-
+          &nbsp;
           <Chip
           avatar={<Avatar>F</Avatar>}
           label="Food"
@@ -86,7 +86,7 @@ function App() {
           onClick={handleClick2}
           disabled={off}
           />
-
+          &nbsp;
           <Chip
           avatar={<Avatar>C</Avatar>}
           label="Clothing"
@@ -105,7 +105,8 @@ function App() {
         <Dummy 
          key={item.name} title={item.name} text={item.text} img={item.img} location={item.location}
          house={item.house} food={item.food} clothing={item.clothing} med={item.med} items={item.items}
-         couns={item.couns} contact={item.contact}
+         couns={item.couns} contact={item.contact} roomSize={item.roomSize} length={item.length}
+         dog={item.dog} cat={item.cat}
         />
         )}
         
