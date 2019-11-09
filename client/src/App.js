@@ -6,6 +6,12 @@ import Dummy from './components/dummy'
 
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
+import HouseIcon from '@material-ui/icons/House';
+import KitchenIcon from '@material-ui/icons/Kitchen';
+import LocalPharmacyIcon from '@material-ui/icons/LocalPharmacy';
+import AccessibilityIcon from '@material-ui/icons/Accessibility';
+import BuildIcon from '@material-ui/icons/Build';
+import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
 
 function App() {
@@ -22,7 +28,7 @@ function App() {
     roomSize: 2,
     length: '1 month',
     dog: true,
-    cat: true,
+    cat: false,
     med: true,
     food: true,
     clothing: true,
@@ -70,8 +76,8 @@ function App() {
       
       
           <Chip
-          avatar={<Avatar>H</Avatar>}
           label="Housing"
+          icon={<HouseIcon />}
           clickable
           color="primary"
           onClick={handleClick}
@@ -79,8 +85,8 @@ function App() {
           />
           &nbsp;
           <Chip
-          avatar={<Avatar>F</Avatar>}
           label="Food"
+          icon={<KitchenIcon />}
           clickable
           color="primary"
           onClick={handleClick2}
@@ -88,19 +94,47 @@ function App() {
           />
           &nbsp;
           <Chip
-          avatar={<Avatar>C</Avatar>}
+          icon={<AccessibilityIcon />}
           label="Clothing"
           clickable
           color="primary"
           onClick={handleClick3}
           disabled={off}
           />
+          &nbsp;
+        <Chip
+          icon={<LocalPharmacyIcon />}
+          label="Medical Supplies"
+          clickable
+          color="primary"
+          onClick={handleClick3}
+          disabled={off}
+          />
+          &nbsp;
+        <Chip
+          icon={<BuildIcon />}
+          label="Household Items "
+          clickable
+          color="primary"
+          onClick={handleClick3}
+          disabled={off}
+          />
+          &nbsp;
+        <Chip
+          icon={<RecordVoiceOverIcon />}
+          label="Counseling"
+          clickable
+          color="primary"
+          onClick={handleClick3}
+          disabled={off}
+          />
+          &nbsp;
 
 
 
 
 
-
+        <hr />
         {offer.map((item, key) =>
         <Dummy 
          key={item.name} title={item.name} text={item.text} img={item.img} location={item.location}
