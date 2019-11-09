@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 function Dummy(props){
- if(props.bol === true){
+ if(props.bol === true && props.rend1 === true){
     return(
         
         <div>
@@ -10,7 +10,7 @@ function Dummy(props){
             <p>{props.text}</p>
         </div>
     )
- }else if (props.bol2 === true){
+ }else if (props.bol2 === true&& props.rend2 === true){
     return(
         
         <div>
@@ -18,7 +18,7 @@ function Dummy(props){
             <img style={{width:'400px', height:'400px'}}src={props.img} />
         </div>
     )
- }else if (props.bol3 === true){
+ }else if (props.bol3 === true && props.rend3 === true){
      return(
         <div>
             <h1>{props.title}</h1>
