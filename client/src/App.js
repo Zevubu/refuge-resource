@@ -31,7 +31,24 @@ function App() {
     img: 'https://i.imgur.com/HSdYMMN.jpg',
     text: 'Lorem Ipsum Canus Noctus Ignus Ambulus Barkus',
     more: 'No More Info'
-  }])
+  },{
+  name: 'Goofus Gallant',
+  contact: 'andrewtocchi@gmail.com',
+  location: 'Nowhere',
+  house: false,
+  roomSize: 2,
+  length: '1 month',
+  dog: true,
+  cat: true,
+  med: false,
+  food: true,
+  clothing: false,
+  items: false,
+  couns: false,
+  img: 'https://i.imgur.com/HSdYMMN.jpg',
+  text: 'Sorry I can only offer a Single Hamburger ',
+  more: 'No More Info'}
+])
 
   const handleClick = () =>{
   // off ? setOff(false) : setOff(true);
@@ -88,7 +105,7 @@ function App() {
         <Dummy 
          key={item.name} title={item.name} text={item.text} img={item.img} location={item.location}
          house={item.house} food={item.food} clothing={item.clothing} med={item.med} items={item.items}
-         couns={item.couns}
+         couns={item.couns} contact={item.contact}
         />
         )}
         

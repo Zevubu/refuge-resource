@@ -21,6 +21,8 @@ function Dummy(props){
              </h2>
             <img style={{width:'400px', height:'400px'}}src={props.img} />
             <p>{props.text}</p>
+            <p>Contact: <a href={props.contact}>{props.contact}</a></p>
+            <hr />
         </div>
     )
 //  }else if (props.bol2 === true&& props.rend2 === true){
