@@ -13,7 +13,13 @@ import BuildIcon from '@material-ui/icons/Build';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
 function Dummy(props){
-
+ if ((props.housing === true && props.house === true )      || 
+     (props.nutrients === true && props.food === true )     ||
+     (props.supplies === true && props.items === true )     ||
+     (props.medical === true && props.med === true )        ||
+     (props.clothes === true && props.clothing === true )   ||
+     (props.counseling === true && props.couns === true )
+    ){
     return(
         
         <div>
@@ -41,7 +47,10 @@ function Dummy(props){
             <hr />
         </div>
     )
-
+            }
+            else{
+                return ''
+            }
 }
 
 

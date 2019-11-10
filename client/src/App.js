@@ -34,11 +34,11 @@ function App() {
     length: '1 month',
     dog: true,
     cat: false,
-    med: true,
-    food: true,
+    med: false,
+    food: false,
     clothing: true,
     items: true,
-    couns: true,
+    couns: false,
     img: 'https://i.imgur.com/HSdYMMN.jpg',
     text: 'Lorem Ipsum Canus Noctus Ignus Ambulus Barkus',
     more: 'No More Info'
@@ -100,7 +100,7 @@ function App() {
           <Chip
           label="Housing"
           id='housing'
-          icon={<HouseIcon />}
+          icon={<HouseIcon id='housing'/>}
           clickable
           color="primary"
           onClick={handleClick}
@@ -112,7 +112,7 @@ function App() {
           <Chip
           label="Food"
           id="nutrients"
-          icon={<KitchenIcon />}
+          icon={<KitchenIcon id='nutrients' />}
           clickable
           color="primary"
           onClick={handleClick}
@@ -122,7 +122,7 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<AccessibilityIcon />}
+          icon={<AccessibilityIcon id='clothes' />}
           label="Clothing"
           id="clothes"
           clickable
@@ -134,7 +134,7 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<LocalPharmacyIcon />}
+          icon={<LocalPharmacyIcon id='medical'/>}
           label="Medical Supplies"
           id='medical'
           clickable
@@ -146,7 +146,7 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<BuildIcon />}
+          icon={<BuildIcon id='supplies'/>}
           label="Household Items "
           id='supplies'
           clickable
@@ -158,7 +158,7 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<RecordVoiceOverIcon />}
+          icon={<RecordVoiceOverIcon id='counseling'/>}
           label="Counseling"
           id='counseling'
           clickable
@@ -175,11 +175,14 @@ function App() {
 
         <hr />
         {offer.map((item, key) =>
+        
         <Dummy 
          key={item.name} title={item.name} text={item.text} img={item.img} location={item.location}
          house={item.house} food={item.food} clothing={item.clothing} med={item.med} items={item.items}
          couns={item.couns} contact={item.contact} roomSize={item.roomSize} length={item.length}
          dog={item.dog} cat={item.cat}
+         housing={search.housing} nutrients={search.nutrients} clothes={search.clothes} supplies={search.supplies}
+         medical={search.medical} counseling={search.counseling} 
         />
         )}
         
