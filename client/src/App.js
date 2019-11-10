@@ -61,9 +61,36 @@ function App() {
   more: 'No More Info'}
 ])
 
-  const handleClick = () =>{
-  // off ? setOff(false) : setOff(true);
-  setOff(false);
+  const handleClick = (event) =>{
+    console.log(event.target.id)
+    console.log(search.nutrients)
+    switch(event.target.id){
+      case "housing":
+      search.housing ? setSearch({...search, housing: false}) : setSearch({...search,housing: true});
+      console.log(search.housing)
+      break;
+      case "housing":
+      search.housing ? setSearch({...search, housing: false}) : setSearch({...search,housing: true});
+      break;
+      case "clothes":
+      search.clothes ? setSearch({...search, clothes: false}) : setSearch({...search,clothes: true});
+      break;
+      case "nutrients":
+      search.nutrients ? setSearch({...search, nutrients: false}) : setSearch({...search,nutrients: true});
+      break;
+      case "medical":
+      search.medical ? setSearch({...search, medical: false}) : setSearch({...search,medical: true});
+      break;
+      case "supplies":
+      search.supplies ? setSearch({...search, supplies: false}) : setSearch({...search,supplies: true});
+      break;
+      case "counseling":
+      search.counseling ? setSearch({...search, counseling: false}) : setSearch({...search,counseling: true});
+      break;
+      default:
+      console.log(event.target.id)
+    }
+
   }
   
   return (
@@ -72,22 +99,24 @@ function App() {
       
           <Chip
           label="Housing"
+          id='housing'
           icon={<HouseIcon />}
           clickable
           color="primary"
           onClick={handleClick}
-          disabled={off}
+          variant={search.housing ? 'default': 'outlined'}
           />
 
           &nbsp;
 
           <Chip
           label="Food"
+          id="nutrients"
           icon={<KitchenIcon />}
           clickable
           color="primary"
           onClick={handleClick}
-          disabled={off}
+          variant={search.nutrients ? 'default': 'outlined'}
           />
 
           &nbsp;
@@ -95,10 +124,11 @@ function App() {
           <Chip
           icon={<AccessibilityIcon />}
           label="Clothing"
+          id="clothes"
           clickable
           color="primary"
           onClick={handleClick}
-          disabled={off}
+          variant={search.clothes ? 'default': 'outlined'}
           />
 
           &nbsp;
@@ -106,10 +136,11 @@ function App() {
           <Chip
           icon={<LocalPharmacyIcon />}
           label="Medical Supplies"
+          id='medical'
           clickable
           color="primary"
           onClick={handleClick}
-          disabled={off}
+          variant={search.medical ? 'default': 'outlined'}
           />
 
           &nbsp;
@@ -117,10 +148,11 @@ function App() {
           <Chip
           icon={<BuildIcon />}
           label="Household Items "
+          id='supplies'
           clickable
           color="primary"
           onClick={handleClick}
-          disabled={off}
+          variant={search.supplies ? 'default': 'outlined'}
           />
 
           &nbsp;
@@ -128,10 +160,11 @@ function App() {
           <Chip
           icon={<RecordVoiceOverIcon />}
           label="Counseling"
+          id='counseling'
           clickable
           color="primary"
           onClick={handleClick}
-          disabled={off}
+          variant={search.counseling ? 'default': 'outlined'}
           />
 
           &nbsp;
