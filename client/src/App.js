@@ -16,10 +16,15 @@ import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
 function App() {
   //using Hooks instead of classes to set state
-  const [off,setOff] = useState(false);
-  const [rend1,setRend1] = useState(true);
-  const [rend2,setRend2] = useState(true);
-  const [rend3,setRend3] = useState(true);
+  const [off,setOff] = useState(true);
+  const [search,setSearch] = useState({
+    housing: true,
+    medical: true,
+    nutrients: true,
+    clothes: true,
+    supplies: true,
+    counseling: true
+  })
   const [offer, setOffer] = useState([{
     name: 'Andrew Tocchi',
     contact: 'andrewtocchi@gmail.com',
@@ -58,18 +63,8 @@ function App() {
 
   const handleClick = () =>{
   // off ? setOff(false) : setOff(true);
-  setRend1(false);
+  setOff(false);
   }
-
-  const handleClick2 = () =>{
-    // off ? setOff(false) : setOff(true);
-    setRend2(false);
-    }
-
-  const handleClick3 = () =>{
-    // off ? setOff(false) : setOff(true);
-    setRend3(false);
-     }
   
   return (
     <div className="App">
@@ -83,51 +78,62 @@ function App() {
           onClick={handleClick}
           disabled={off}
           />
+
           &nbsp;
+
           <Chip
           label="Food"
           icon={<KitchenIcon />}
           clickable
           color="primary"
-          onClick={handleClick2}
+          onClick={handleClick}
           disabled={off}
           />
+
           &nbsp;
+
           <Chip
           icon={<AccessibilityIcon />}
           label="Clothing"
           clickable
           color="primary"
-          onClick={handleClick3}
+          onClick={handleClick}
           disabled={off}
           />
+
           &nbsp;
-        <Chip
+
+          <Chip
           icon={<LocalPharmacyIcon />}
           label="Medical Supplies"
           clickable
           color="primary"
-          onClick={handleClick3}
+          onClick={handleClick}
           disabled={off}
           />
+
           &nbsp;
-        <Chip
+
+          <Chip
           icon={<BuildIcon />}
           label="Household Items "
           clickable
           color="primary"
-          onClick={handleClick3}
+          onClick={handleClick}
           disabled={off}
           />
+
           &nbsp;
-        <Chip
+
+          <Chip
           icon={<RecordVoiceOverIcon />}
           label="Counseling"
           clickable
           color="primary"
-          onClick={handleClick3}
+          onClick={handleClick}
           disabled={off}
           />
+
           &nbsp;
 
 
