@@ -24,7 +24,8 @@ function App() {
     nutrients: true,
     clothes: true,
     supplies: true,
-    counseling: true
+    counseling: true,
+    other: true
   })
   const [offer, setOffer] = useState([{
     name: 'Andrew Tocchi',
@@ -40,6 +41,7 @@ function App() {
     clothing: true,
     items: true,
     couns: false,
+    other: false,
     img: 'https://i.imgur.com/HSdYMMN.jpg',
     text: 'Lorem Ipsum Canus Noctus Ignus Ambulus Barkus',
     more: 'No More Info'
@@ -57,6 +59,7 @@ function App() {
   clothing: false,
   items: false,
   couns: false,
+  other: false,
   img: 'https://i.imgur.com/HSdYMMN.jpg',
   text: 'Sorry I can only offer a Single Hamburger ',
   more: 'No More Info'}
