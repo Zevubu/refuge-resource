@@ -11,3 +11,5 @@ router.route("/:id")
   .get(counsMedController.findById)
   .put(counsMedController.update)
   .delete(counsMedController.remove);
+
+  module.exports = router;
