@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { yieldExpression } from '@babel/types';
 
+
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import PetsIcon from '@material-ui/icons/Pets';
@@ -11,6 +12,8 @@ import LocalPharmacyIcon from '@material-ui/icons/LocalPharmacy';
 import AccessibilityIcon from '@material-ui/icons/Accessibility';
 import BuildIcon from '@material-ui/icons/Build';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
+
+
 
 function Dummy(props){
  if ((props.housing === true && props.house === true )      || 
@@ -23,6 +26,7 @@ function Dummy(props){
     return(
         
         <div>
+        
             <h1>{props.title}</h1>
             <h3>Located @:{props.location}</h3>
 

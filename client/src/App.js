@@ -4,6 +4,7 @@ import './App.css';
 
 import Dummy from './components/dummy'
 
+
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import HouseIcon from '@material-ui/icons/House';
@@ -168,7 +169,24 @@ function App() {
           />
 
           &nbsp;
-
+          <br></br>
+          <br></br>
+        {search.housing ? 
+         <Chip
+         icon={<RecordVoiceOverIcon id='counseling'/>}
+         label="Counseling"
+         id='counseling'
+         clickable
+         color="primary"
+         onClick={handleClick}
+         variant={search.counseling ? 'default': 'outlined'}
+         />
+          :
+          ''
+      
+      
+      
+        }
 
 
 
