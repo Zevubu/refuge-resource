@@ -33,7 +33,7 @@ function App() {
     location: 'Oakland',
     house: true,
     roomSize: 2,
-    length: '1 month',
+    stayLength: '1 month',
     dog: true,
     cat: false,
     med: false,
@@ -51,7 +51,7 @@ function App() {
   location: 'Nowhere',
   house: false,
   roomSize: 2,
-  length: '1 month',
+  stayLength: '1 month',
   dog: true,
   cat: true,
   med: false,
@@ -200,7 +200,7 @@ function App() {
         <Dummy 
          key={item.name} title={item.name} text={item.text} img={item.img} location={item.location}
          house={item.house} food={item.food} clothing={item.clothing} med={item.med} items={item.items}
-         couns={item.couns} contact={item.contact} roomSize={item.roomSize} length={item.length}
+         couns={item.couns} contact={item.contact} roomSize={item.roomSize} stayLength={item.stayLength}
          dog={item.dog} cat={item.cat}
          housing={search.housing} nutrients={search.nutrients} clothes={search.clothes} supplies={search.supplies}
          medical={search.medical} counseling={search.counseling} 
