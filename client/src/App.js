@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Dummy from './components/dummy'
+import API from "./utils/API";
 
 
 import Avatar from '@material-ui/core/Avatar';
