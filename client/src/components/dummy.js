@@ -5,54 +5,52 @@ import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import PetsIcon from '@material-ui/icons/Pets';
 import NotInterestedIcon from '@material-ui/icons/NotInterested';
+import HouseIcon from '@material-ui/icons/House';
+import KitchenIcon from '@material-ui/icons/Kitchen';
+import LocalPharmacyIcon from '@material-ui/icons/LocalPharmacy';
+import AccessibilityIcon from '@material-ui/icons/Accessibility';
+import BuildIcon from '@material-ui/icons/Build';
+import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
 function Dummy(props){
-//  if(props.bol === true && props.rend1 === true){
+ if ((props.housing === true && props.house === true )      || 
+     (props.nutrients === true && props.food === true )     ||
+     (props.supplies === true && props.items === true )     ||
+     (props.medical === true && props.med === true )        ||
+     (props.clothes === true && props.clothing === true )   ||
+     (props.counseling === true && props.couns === true )
+    ){
     return(
         
         <div>
             <h1>{props.title}</h1>
             <h3>Located @:{props.location}</h3>
-            <h2>Offering:
-             {props.house ? <Chip label='Housing'/> : ''}&nbsp;
-             {props.food ? <Chip label='Food'/> : ''}&nbsp;
-             {props.clothing ? <Chip label='Clothing'/> : ''}&nbsp;
-             {props.items ? <Chip label='Household-Items'/> : ''}&nbsp;
-             {props.med ? <Chip label='Medical-Supplies'/> : ''}&nbsp;
-             {props.couns ? <Chip label='Counseling-Services' />: ''}&nbsp;
-             </h2>
+
+            <h2>Offering:&nbsp;
+                {props.house ? <Chip label='Housing' icon={<HouseIcon />}/> : ''}&nbsp;
+                {props.food ? <Chip label='Food' icon={<KitchenIcon/>}/> : ''}&nbsp;
+                {props.clothing ? <Chip label='Clothing' icon={<AccessibilityIcon />}/> : ''}&nbsp;
+                {props.med ? <Chip label='Medical-Supplies' icon={<LocalPharmacyIcon/>}/> : ''}&nbsp;
+                {props.items ? <Chip label='Household-Items' icon={<BuildIcon />}/> : ''}&nbsp;
+                {props.couns ? <Chip label='Counseling-Services' icon={<RecordVoiceOverIcon />} />: ''}&nbsp;
+            </h2>
+
             {props.house ? <h3>Room For:&nbsp;<Chip label={props.roomSize} />&nbsp; Length:&nbsp;<Chip label={props.length} /> </h3> : ''}
             {props.house ? <h3>Pets ok?&nbsp;
                 {props.dog ? <Chip label='Dogs' icon={<PetsIcon />} /> : <Chip label='No Dogs' icon={<NotInterestedIcon />}/>}  &nbsp;
                 {props.cat ? <Chip label='Cats' icon={<PetsIcon />} /> : <Chip label='No Cats' icon={<NotInterestedIcon />}/>}  &nbsp;
             </h3> : ''}
+
             <img style={{width:'400px', height:'400px'}}src={props.img} />
             <p>{props.text}</p>
             <p>Contact: <a href={props.contact}>{props.contact}</a></p>
             <hr />
         </div>
     )
-//  }else if (props.bol2 === true&& props.rend2 === true){
-//     return(
-        
-//         <div>
-//             <h1>{props.title}</h1>
-//             <img style={{width:'400px', height:'400px'}}src={props.img} />
-//         </div>
-//     )
-//  }else if (props.bol3 === true && props.rend3 === true){
-//      return(
-//         <div>
-//             <h1>{props.title}</h1>
-//             <img style={{width:'400px', height:'400px'}}src={props.img} />
-//         </div>
-//      )
-//  }
-//   else{
-//   return(
-//   <div>GoodBye World</div>
-//   )
-//  }
+            }
+            else{
+                return ''
+            }
 }
 
 

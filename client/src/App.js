@@ -16,10 +16,15 @@ import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
 function App() {
   //using Hooks instead of classes to set state
-  const [off,setOff] = useState(false);
-  const [rend1,setRend1] = useState(true);
-  const [rend2,setRend2] = useState(true);
-  const [rend3,setRend3] = useState(true);
+  const [off,setOff] = useState(true);
+  const [search,setSearch] = useState({
+    housing: true,
+    medical: true,
+    nutrients: true,
+    clothes: true,
+    supplies: true,
+    counseling: true
+  })
   const [offer, setOffer] = useState([{
     name: 'Andrew Tocchi',
     contact: 'andrewtocchi@gmail.com',
@@ -29,11 +34,11 @@ function App() {
     length: '1 month',
     dog: true,
     cat: false,
-    med: true,
-    food: true,
+    med: false,
+    food: false,
     clothing: true,
     items: true,
-    couns: true,
+    couns: false,
     img: 'https://i.imgur.com/HSdYMMN.jpg',
     text: 'Lorem Ipsum Canus Noctus Ignus Ambulus Barkus',
     more: 'No More Info'
@@ -56,20 +61,37 @@ function App() {
   more: 'No More Info'}
 ])
 
-  const handleClick = () =>{
-  // off ? setOff(false) : setOff(true);
-  setRend1(false);
-  }
-
-  const handleClick2 = () =>{
-    // off ? setOff(false) : setOff(true);
-    setRend2(false);
+  const handleClick = (event) =>{
+    console.log(event.target.id)
+    console.log(search.nutrients)
+    switch(event.target.id){
+      case "housing":
+      search.housing ? setSearch({...search, housing: false}) : setSearch({...search,housing: true});
+      console.log(search.housing)
+      break;
+      case "housing":
+      search.housing ? setSearch({...search, housing: false}) : setSearch({...search,housing: true});
+      break;
+      case "clothes":
+      search.clothes ? setSearch({...search, clothes: false}) : setSearch({...search,clothes: true});
+      break;
+      case "nutrients":
+      search.nutrients ? setSearch({...search, nutrients: false}) : setSearch({...search,nutrients: true});
+      break;
+      case "medical":
+      search.medical ? setSearch({...search, medical: false}) : setSearch({...search,medical: true});
+      break;
+      case "supplies":
+      search.supplies ? setSearch({...search, supplies: false}) : setSearch({...search,supplies: true});
+      break;
+      case "counseling":
+      search.counseling ? setSearch({...search, counseling: false}) : setSearch({...search,counseling: true});
+      break;
+      default:
+      console.log(event.target.id)
     }
 
-  const handleClick3 = () =>{
-    // off ? setOff(false) : setOff(true);
-    setRend3(false);
-     }
+  }
   
   return (
     <div className="App">
@@ -77,57 +99,74 @@ function App() {
       
           <Chip
           label="Housing"
-          icon={<HouseIcon />}
+          id='housing'
+          icon={<HouseIcon id='housing'/>}
           clickable
           color="primary"
           onClick={handleClick}
-          disabled={off}
+          variant={search.housing ? 'default': 'outlined'}
           />
+
           &nbsp;
+
           <Chip
           label="Food"
-          icon={<KitchenIcon />}
+          id="nutrients"
+          icon={<KitchenIcon id='nutrients' />}
           clickable
           color="primary"
-          onClick={handleClick2}
-          disabled={off}
+          onClick={handleClick}
+          variant={search.nutrients ? 'default': 'outlined'}
           />
+
           &nbsp;
+
           <Chip
-          icon={<AccessibilityIcon />}
+          icon={<AccessibilityIcon id='clothes' />}
           label="Clothing"
+          id="clothes"
           clickable
           color="primary"
-          onClick={handleClick3}
-          disabled={off}
+          onClick={handleClick}
+          variant={search.clothes ? 'default': 'outlined'}
           />
+
           &nbsp;
-        <Chip
-          icon={<LocalPharmacyIcon />}
+
+          <Chip
+          icon={<LocalPharmacyIcon id='medical'/>}
           label="Medical Supplies"
+          id='medical'
           clickable
           color="primary"
-          onClick={handleClick3}
-          disabled={off}
+          onClick={handleClick}
+          variant={search.medical ? 'default': 'outlined'}
           />
+
           &nbsp;
-        <Chip
-          icon={<BuildIcon />}
+
+          <Chip
+          icon={<BuildIcon id='supplies'/>}
           label="Household Items "
+          id='supplies'
           clickable
           color="primary"
-          onClick={handleClick3}
-          disabled={off}
+          onClick={handleClick}
+          variant={search.supplies ? 'default': 'outlined'}
           />
+
           &nbsp;
-        <Chip
-          icon={<RecordVoiceOverIcon />}
+
+          <Chip
+          icon={<RecordVoiceOverIcon id='counseling'/>}
           label="Counseling"
+          id='counseling'
           clickable
           color="primary"
-          onClick={handleClick3}
-          disabled={off}
+          onClick={handleClick}
+          variant={search.counseling ? 'default': 'outlined'}
           />
+
           &nbsp;
 
 
@@ -136,11 +175,14 @@ function App() {
 
         <hr />
         {offer.map((item, key) =>
+        
         <Dummy 
          key={item.name} title={item.name} text={item.text} img={item.img} location={item.location}
          house={item.house} food={item.food} clothing={item.clothing} med={item.med} items={item.items}
          couns={item.couns} contact={item.contact} roomSize={item.roomSize} length={item.length}
          dog={item.dog} cat={item.cat}
+         housing={search.housing} nutrients={search.nutrients} clothes={search.clothes} supplies={search.supplies}
+         medical={search.medical} counseling={search.counseling} 
         />
         )}
         
