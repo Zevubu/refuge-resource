@@ -67,35 +67,35 @@ function App() {
 ])
 
   const handleClick = (event) =>{
-    console.log(event.target.id)
-    console.log(search.nutrients)
-    switch(event.target.id){
-      case "housing":
+    console.log(event.target)
+    let targeted = event.target.id
+    if(event.target.id === ''){
+      targeted = event.target.innerHTML
+    }
+    
+
+    switch(targeted){
+      case "Housing":
       search.housing ? setSearch({...search, housing: false}) : setSearch({...search,housing: true});
-      console.log(search.housing)
       break;
-      case "housing":
-      search.housing ? setSearch({...search, housing: false}) : setSearch({...search,housing: true});
-      break;
-      case "clothes":
+      case "Clothing":
       search.clothes ? setSearch({...search, clothes: false}) : setSearch({...search,clothes: true});
       break;
-      case "nutrients":
+      case "Food":
       search.nutrients ? setSearch({...search, nutrients: false}) : setSearch({...search,nutrients: true});
       break;
-      case "medical":
+      case "Medical Supplies":
       search.medical ? setSearch({...search, medical: false}) : setSearch({...search,medical: true});
       break;
-      case "supplies":
+      case "Household Items":
       search.supplies ? setSearch({...search, supplies: false}) : setSearch({...search,supplies: true});
       break;
-      case "counseling":
+      case "Counseling":
       search.counseling ? setSearch({...search, counseling: false}) : setSearch({...search,counseling: true});
       break;
       default:
-      console.log(event.target.id)
     }
-
+  
   }
   
   return (
@@ -104,8 +104,8 @@ function App() {
       
           <Chip
           label="Housing"
-          id='housing'
-          icon={<HouseIcon id='housing'/>}
+          id='Housing'
+          icon={<HouseIcon id='Housing'/>}
           clickable
           color="primary"
           onClick={handleClick}
@@ -116,8 +116,8 @@ function App() {
 
           <Chip
           label="Food"
-          id="nutrients"
-          icon={<KitchenIcon id='nutrients' />}
+          id="Food"
+          icon={<KitchenIcon id='Food' />}
           clickable
           color="primary"
           onClick={handleClick}
@@ -127,9 +127,9 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<AccessibilityIcon id='clothes' />}
+          icon={<AccessibilityIcon id='Clothing' />}
           label="Clothing"
-          id="clothes"
+          id="Clothing"
           clickable
           color="primary"
           onClick={handleClick}
@@ -139,7 +139,7 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<LocalPharmacyIcon id='medical'/>}
+          icon={<LocalPharmacyIcon id='Medical Supplies'/>}
           label="Medical Supplies"
           id='medical'
           clickable
@@ -151,9 +151,9 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<BuildIcon id='supplies'/>}
-          label="Household Items "
-          id='supplies'
+          icon={<BuildIcon id='Household Items'/>}
+          label="Household Items"
+          id='Household Items'
           clickable
           color="primary"
           onClick={handleClick}
@@ -163,9 +163,9 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<RecordVoiceOverIcon id='counseling'/>}
+          icon={<RecordVoiceOverIcon id='Counseling'/>}
           label="Counseling"
-          id='counseling'
+          id='Counseling'
           clickable
           color="primary"
           onClick={handleClick}
