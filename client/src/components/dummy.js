@@ -39,7 +39,7 @@ function Dummy(props){
                 {props.couns ? <Chip label='Counseling-Services' icon={<RecordVoiceOverIcon />} />: ''}&nbsp;
             </h2>
 
-            {props.house ? <h3>Room For:&nbsp;<Chip label={props.roomSize} />&nbsp; Length:&nbsp;<Chip label={props.length} /> </h3> : ''}
+            {props.house ? <h3>Room For:&nbsp;<Chip label={props.roomSize} />&nbsp; Length:&nbsp;<Chip label={props.stayLength} /> </h3> : ''}
             {props.house ? <h3>Pets ok?&nbsp;
                 {props.dog ? <Chip label='Dogs' icon={<PetsIcon />} /> : <Chip label='No Dogs' icon={<NotInterestedIcon />}/>}  &nbsp;
                 {props.cat ? <Chip label='Cats' icon={<PetsIcon />} /> : <Chip label='No Cats' icon={<NotInterestedIcon />}/>}  &nbsp;
