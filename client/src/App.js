@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Dummy from './components/dummy'
+import API from "./utils/API";
 
 
 import Avatar from '@material-ui/core/Avatar';
@@ -24,7 +25,8 @@ function App() {
     nutrients: true,
     clothes: true,
     supplies: true,
-    counseling: true
+    counseling: true,
+    other: true
   })
   const [offer, setOffer] = useState([{
     name: 'Andrew Tocchi',
@@ -32,7 +34,7 @@ function App() {
     location: 'Oakland',
     house: true,
     roomSize: 2,
-    length: '1 month',
+    stayLength: '1 month',
     dog: true,
     cat: false,
     med: false,
@@ -40,6 +42,7 @@ function App() {
     clothing: true,
     items: true,
     couns: false,
+    other: false,
     img: 'https://i.imgur.com/HSdYMMN.jpg',
     text: 'Lorem Ipsum Canus Noctus Ignus Ambulus Barkus',
     more: 'No More Info'
@@ -49,7 +52,7 @@ function App() {
   location: 'Nowhere',
   house: false,
   roomSize: 2,
-  length: '1 month',
+  stayLength: '1 month',
   dog: true,
   cat: true,
   med: false,
@@ -57,41 +60,42 @@ function App() {
   clothing: false,
   items: false,
   couns: false,
+  other: false,
   img: 'https://i.imgur.com/HSdYMMN.jpg',
   text: 'Sorry I can only offer a Single Hamburger ',
   more: 'No More Info'}
 ])
 
   const handleClick = (event) =>{
-    console.log(event.target.id)
-    console.log(search.nutrients)
-    switch(event.target.id){
-      case "housing":
+    console.log(event.target)
+    let targeted = event.target.id
+    if(event.target.id === ''){
+      targeted = event.target.innerHTML
+    }
+    
+
+    switch(targeted){
+      case "Housing":
       search.housing ? setSearch({...search, housing: false}) : setSearch({...search,housing: true});
-      console.log(search.housing)
       break;
-      case "housing":
-      search.housing ? setSearch({...search, housing: false}) : setSearch({...search,housing: true});
-      break;
-      case "clothes":
+      case "Clothing":
       search.clothes ? setSearch({...search, clothes: false}) : setSearch({...search,clothes: true});
       break;
-      case "nutrients":
+      case "Food":
       search.nutrients ? setSearch({...search, nutrients: false}) : setSearch({...search,nutrients: true});
       break;
-      case "medical":
+      case "Medical Supplies":
       search.medical ? setSearch({...search, medical: false}) : setSearch({...search,medical: true});
       break;
-      case "supplies":
+      case "Household Items":
       search.supplies ? setSearch({...search, supplies: false}) : setSearch({...search,supplies: true});
       break;
-      case "counseling":
+      case "Counseling":
       search.counseling ? setSearch({...search, counseling: false}) : setSearch({...search,counseling: true});
       break;
       default:
-      console.log(event.target.id)
     }
-
+  
   }
   
   return (
@@ -100,8 +104,8 @@ function App() {
       
           <Chip
           label="Housing"
-          id='housing'
-          icon={<HouseIcon id='housing'/>}
+          id='Housing'
+          icon={<HouseIcon id='Housing'/>}
           clickable
           color="primary"
           onClick={handleClick}
@@ -112,8 +116,8 @@ function App() {
 
           <Chip
           label="Food"
-          id="nutrients"
-          icon={<KitchenIcon id='nutrients' />}
+          id="Food"
+          icon={<KitchenIcon id='Food' />}
           clickable
           color="primary"
           onClick={handleClick}
@@ -123,9 +127,9 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<AccessibilityIcon id='clothes' />}
+          icon={<AccessibilityIcon id='Clothing' />}
           label="Clothing"
-          id="clothes"
+          id="Clothing"
           clickable
           color="primary"
           onClick={handleClick}
@@ -135,7 +139,7 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<LocalPharmacyIcon id='medical'/>}
+          icon={<LocalPharmacyIcon id='Medical Supplies'/>}
           label="Medical Supplies"
           id='medical'
           clickable
@@ -147,9 +151,9 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<BuildIcon id='supplies'/>}
-          label="Household Items "
-          id='supplies'
+          icon={<BuildIcon id='Household Items'/>}
+          label="Household Items"
+          id='Household Items'
           clickable
           color="primary"
           onClick={handleClick}
@@ -159,9 +163,9 @@ function App() {
           &nbsp;
 
           <Chip
-          icon={<RecordVoiceOverIcon id='counseling'/>}
+          icon={<RecordVoiceOverIcon id='Counseling'/>}
           label="Counseling"
-          id='counseling'
+          id='Counseling'
           clickable
           color="primary"
           onClick={handleClick}
@@ -197,7 +201,7 @@ function App() {
         <Dummy 
          key={item.name} title={item.name} text={item.text} img={item.img} location={item.location}
          house={item.house} food={item.food} clothing={item.clothing} med={item.med} items={item.items}
-         couns={item.couns} contact={item.contact} roomSize={item.roomSize} length={item.length}
+         couns={item.couns} contact={item.contact} roomSize={item.roomSize} stayLength={item.stayLength}
          dog={item.dog} cat={item.cat}
          housing={search.housing} nutrients={search.nutrients} clothes={search.clothes} supplies={search.supplies}
          medical={search.medical} counseling={search.counseling} 

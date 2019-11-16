@@ -3,22 +3,22 @@ const Schema = mongoose.Schema;
 
 const offeredSchema = new Schema({
     name:{ type: String, required: true},
-    contactInfo:{type: String, required: false},
-    locationCity:{ type: String, required:true },
-    housing:{ type:Boolean, default:false },
-    roomForfamilySize:{ type: Number, required:false},
-    lengthOfStay:{type:String, required:false},
-    dogOk:{ type:Boolean, default:false },
-    catOk:{ type:Boolean, default:false },
-    medicalSupplies:{ type: Boolean, default:false},
-    financeSupport: {type:Boolean, default:false},
+    contact:{type: String, required: false},
+    location:{ type: String, required:true },
+    house:{ type:Boolean, default:false },
+    roomSize:{ type: Number, required:false},
+    stayLength:{type:String, required:false},
+    dog:{ type:Boolean, default:false },
+    cat:{ type:Boolean, default:false },
+    med:{ type: Boolean, default:false},
     food:{ type: Boolean, default:false},
     clothing:{ type: Boolean, default:false},
-    houseHoldItems:{ type: Boolean, default:false},
-    counsMed:{ type: Boolean, default:false},
-    photoLinks:[{type:String, required:false}],
-    About: {type:String, required:true},
-    moreInfor:{type:String, required:false}
+    items:{ type: Boolean, default:false},
+    couns:{ type: Boolean, default:false},
+    other:{ type: Boolean, default:false},
+    img:[{type:String, required:false}],
+    text: {type:String, required:true},
+    more:{type:String, required:false}
 });
 
 const Offered = mongoose.model("Offered", offeredSchema);
