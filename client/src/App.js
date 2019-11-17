@@ -1,8 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Dummy from './components/dummy'
 import API from "./utils/API";
+import Nav from './components/Nav'
+import ReactDOM from "react-dom";
 
 
 import Avatar from '@material-ui/core/Avatar';
@@ -13,6 +16,7 @@ import LocalPharmacyIcon from '@material-ui/icons/LocalPharmacy';
 import AccessibilityIcon from '@material-ui/icons/Accessibility';
 import BuildIcon from '@material-ui/icons/Build';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
+
 import Axios from 'axios';
 var offeredPosts = [];
 // = {
@@ -39,6 +43,10 @@ var offeredPosts = [];
     // .then(function() {console.log(offeredPosts)});
 
     // console.log(offeredPosts);
+
+ReactDOM.render(<Nav />,document.getElementById("root"));
+
+
 function App() {
     //using Hooks instead of classes to set state
 
