@@ -3,8 +3,11 @@
 
 Things to work on:
 
-    navBar
-    email
+    navBar, amit
+    offered, form kay
+    api call, mike
+    needed page, andrew
+    email connect to turniaray opereattor. 
     counsle medical
     counsMed model
     report post setting
