@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 import Dummy from './components/dummy'
 import API from "./utils/API";
+import Nav from './components/Nav'
+import ReactDOM from "react-dom";
 
 
 import Avatar from '@material-ui/core/Avatar';
@@ -14,6 +16,9 @@ import LocalPharmacyIcon from '@material-ui/icons/LocalPharmacy';
 import AccessibilityIcon from '@material-ui/icons/Accessibility';
 import BuildIcon from '@material-ui/icons/Build';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
+
+ReactDOM.render(<Nav />,document.getElementById("root"));
+
 
 
 function App() {
