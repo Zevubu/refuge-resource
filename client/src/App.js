@@ -6,7 +6,9 @@ import Dummy from './components/dummy'
 import API from "./utils/API";
 import Nav from './components/Nav'
 import ReactDOM from "react-dom";
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NeededForm from "./pages/forms/neededForm"
+import OfferedForm from "./pages/forms/offeredForm"
 
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
@@ -18,6 +20,7 @@ import BuildIcon from '@material-ui/icons/Build';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
 import Axios from 'axios';
+import neededForm from './pages/forms/neededForm';
 var offeredPosts = [];
 // = {
 // 	"name":"Zev",
@@ -105,6 +108,15 @@ function App() {
 
         return (
             <div className="App">
+                <Router>
+                    <div>
+                        <Nav />
+                        <Switch>
+                            <Route exact path="/neededform" component={neededForm}/>
+                            <Route exact path="/offeredform" component={OfferedForm}/>
+                        </Switch>
+                    </div>
+                </Router>
 
 
                 <Chip
