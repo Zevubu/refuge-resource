@@ -1,81 +1,94 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-function Nav() {
-
-    function TabPanel(props) {
+function TabPanel(props) {
     const { children, value, index, ...other } = props;
-
+  
     return (
-        <Typography
+      <Typography
         component="div"
         role="tabpanel"
         hidden={value !== index}
-        id={`full-width-tabpanel-${index}`}
-        aria-labelledby={`full-width-tab-${index}`}
+        id={`nav-tabpanel-${index}`}
+        aria-labelledby={`nav-tab-${index}`}
         {...other}
-        >
+      >
         <Box p={3}>{children}</Box>
-        </Typography>
+      </Typography>
     );
-    }
-
-    TabPanel.propTypes = {
+  }
+  
+  TabPanel.propTypes = {
     children: PropTypes.node,
     index: PropTypes.any.isRequired,
     value: PropTypes.any.isRequired,
-    };
-
-    function a11yProps(index) {
+  };
+  
+  function a11yProps(index) {
     return {
-        id: `full-width-tab-${index}`,
-        'aria-controls': `full-width-tabpanel-${index}`,
+      id: `nav-tab-${index}`,
+      'aria-controls': `nav-tabpanel-${index}`,
     };
-    }
-
-    const useStyles = makeStyles(theme => ({
-    root: {
-        backgroundColor: theme.palette.background.paper,
-        width: 500,
-    },
-    }));
-
-    const classes = useStyles();
-    const theme = useTheme();
-    const [value, setValue] = React.useState(0);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
-    const handleChangeIndex = index => {
-        setValue(index);
-    };
-
+  }
+  
+  function LinkTab(props) {
     return (
-        <div className={classes.root}>
-        <AppBar position="static" color="default">
-            <Tabs
+      <Tab
+        component="a"
+        onClick={event => {
+          event.preventDefault();
+        }}
+        {...props}
+      />
+    );
+  }
+  
+  const useStyles = makeStyles(theme => ({
+    root: {
+      flexGrow: 1,
+      backgroundColor: theme.palette.background.paper,
+    },
+  }));
+  
+  export default function NavTabs() {
+    const classes = useStyles();
+    const [value, setValue] = React.useState(0);
+  
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+    };
+  
+    return (
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Tabs
+            variant="fullWidth"
             value={value}
             onChange={handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            variant="fullWidth"
-            aria-label="full width tabs example">
-            <Tab label="Help Needed" {...a11yProps(0)} />
-            <Tab label="Help Offered" {...a11yProps(1)} />
-            <Tab label="Counseling" {...a11yProps(2)} />
-            </Tabs>
+            aria-label="nav tabs example"
+          >
+            <LinkTab label="Help Needed" href="/drafts" {...a11yProps(0)} />
+            <LinkTab label="Help Offered" href="/trash" {...a11yProps(1)} />
+            <LinkTab label="Post" href="/neededform" {...a11yProps(2)} />
+          </Tabs>
         </AppBar>
-       </div>
+        <TabPanel value={value} index={0}>
+          <b>Help Needed</b>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <b>Help Offered</b>
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <b>Post</b>
+        </TabPanel>
+      </div>
     );
-    
-}
+  }
 
-export default Nav
+// export default Nav
