@@ -21,33 +21,9 @@ import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
 import Axios from 'axios';
 import neededForm from './pages/forms/neededForm';
+
 var offeredPosts = [];
-// = {
-// 	"name":"Zev",
-// 	"contact": "email@email.com",
-// 	"location":"oakland",
-// 	"house":true,
-//     "roomSize":2,
-//     "stayLength":"3 month",
-//     "dog":false,
-//     "cat":false,
-// 	"med":false,
-//     "food":false,
-//     "clothing":false,
-//     "items":false,
-//     "couns":false,
-//     "other":false,
-//     "img":"https://dsmpublicartfoundation.org/wp-content/uploads/1970/01/3579-Louis-Vuitton-Crack-House-Jordan-Weber.jpg",
-//     "text":"I have stuff to say!",
-//     "more":"string beans and rice!"
-// };
 
-
-    // .then(function() {console.log(offeredPosts)});
-
-    // console.log(offeredPosts);
-
-ReactDOM.render(<Nav />,document.getElementById("root"));
 
 
 function App() {
