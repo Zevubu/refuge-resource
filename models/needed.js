@@ -19,7 +19,7 @@ const neededSchema = new Schema({
     counsMed:{ type: Boolean, default:false},
     photoLinks:[{type:String, required:false}],
     About: {type:String, required:true},
-    moreInfor:{type:String, required:false}
+    moreInfo:{type:String, required:false}
 });
 
 const Needed = mongoose.model("Needed", neededSchema);
