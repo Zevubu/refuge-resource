@@ -9,7 +9,7 @@ import Offered from "./offered.js"
 import neededForm from './pages/forms/neededForm';
 
 function App() {
-    //using Hooks instead of classes to set state
+
 
         return (
             <div className="App">
@@ -17,8 +17,8 @@ function App() {
                     <div>
                         <Nav />
                         <Switch>
-                            <Route exact path="/neededform" component={neededForm}/>
-                            <Route exact path="/offeredform" component={OfferedForm}/>
+                            <Route exact path="/pages/forms/neededForm" component={neededForm}/>
+                            <Route exact path="/pages/forms/offeredform" component={OfferedForm}/>
                         </Switch>
                     </div>
                 </Router>
