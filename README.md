@@ -5,7 +5,6 @@ Things to work on:
 
     navBar, amit
     offered, form kay
-    api call, mike
     needed page, andrew
     email connect to turniaray opereattor. 
     counsle medical
