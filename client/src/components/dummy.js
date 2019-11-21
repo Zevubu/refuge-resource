@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import { yieldExpression } from '@babel/types';
+import React from 'react';
+// import { yieldExpression } from '@babel/types';
 
 
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import PetsIcon from '@material-ui/icons/Pets';
 import NotInterestedIcon from '@material-ui/icons/NotInterested';
@@ -45,7 +45,7 @@ function Dummy(props){
                 {props.cat ? <Chip label='Cats' icon={<PetsIcon />} /> : <Chip label='No Cats' icon={<NotInterestedIcon />}/>}  &nbsp;
             </h3> : ''}
 
-            <img style={{width:'400px', height:'400px'}}src={props.img} />
+            <img style={{width:'400px', height:'400px'}}src={props.img} alt={props.alt}/>
             <p>{props.text}</p>
             <p>Contact: <a href={props.contact}>{props.contact}</a></p>
             <hr />
