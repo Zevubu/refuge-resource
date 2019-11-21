@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import React, { useState, setState } from 'react';
 import './App.css';
 import Dummy from './components/dummy'
-import API from "./utils/API";
-import Nav from './components/Nav'
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import NeededForm from "./pages/forms/neededForm"
-import OfferedForm from "./pages/forms/offeredForm"
+// import Nav from './components/Nav'
+// import ReactDOM from "react-dom";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import NeededForm from "./pages/forms/neededForm"
+// import OfferedForm from "./pages/forms/offeredForm"
 
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import HouseIcon from '@material-ui/icons/House';
 import KitchenIcon from '@material-ui/icons/Kitchen';
@@ -19,14 +17,19 @@ import BuildIcon from '@material-ui/icons/Build';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
 import Axios from 'axios';
-import neededForm from './pages/forms/neededForm';
+// import neededForm from './pages/forms/neededForm';
 var offeredPosts = [];
 
 
 function Offered() {
     //using Hooks instead of classes to set state
+    Axios.get('/api/offered').then(function (res) {
+    setState(res.data)
+    
+      });
 
-        const [off, setOff] = useState(true);
+        // const [off, setOff] = useState(true);
+
         const [search, setSearch] = useState({
             housing: true,
             medical: true,
@@ -36,15 +39,8 @@ function Offered() {
             counseling: true,
             other: true
         });
-        console.log(offeredPosts);
         const [offer, setOffer] = useState(offeredPosts);
 
-
-
-            Axios.get('http://localhost:3001/api/offered').then(function (res) {
-        offeredPosts = res.data;
-        setOffer(offeredPosts)
-        })
         const handleClick = (event) => {
             console.log(event.target)
             let targeted = event.target.id
