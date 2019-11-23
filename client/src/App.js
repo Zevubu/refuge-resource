@@ -5,7 +5,8 @@ import Nav from './components/Nav'
 // import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import OfferedForm from "./pages/forms/offeredForm"
-import Offered from "./offered.js"
+import Offered from "./offered.js";
+import Needed from "./needed.js";
 import neededForm from './pages/forms/neededForm';
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
                 </Router>
 
             <Offered />
-                
+            <Needed />
+            
             </div>
         );
     }
