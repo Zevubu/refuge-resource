@@ -9,6 +9,7 @@ import Dummy from './components/dummy'
 
 // import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
+import PetsIcon from '@material-ui/icons/Pets';
 import HouseIcon from '@material-ui/icons/House';
 import KitchenIcon from '@material-ui/icons/Kitchen';
 import LocalPharmacyIcon from '@material-ui/icons/LocalPharmacy';
@@ -33,7 +34,9 @@ function Offered() {
             clothes: true,
             supplies: true,
             counseling: true,
-            other: true
+            other: true,
+            dogs: true,
+            cats: true
         });
 
         const [offer, setOffer] = useState([
@@ -98,6 +101,13 @@ function Offered() {
                 case "Counseling":
                     search.counseling ? setSearch({ ...search, counseling: false }) : setSearch({ ...search, counseling: true });
                     break;
+                case "Dogs":
+                    search.dogs ? setSearch({ ...search, dogs: false }) : setSearch({ ...search, dogs: true });
+                    break;
+                case "Cats":
+                    search.cats ? setSearch({ ...search, cats: false }) : setSearch({ ...search, cats: true });
+                    break;
+
                 default:
             }
 
@@ -180,15 +190,28 @@ function Offered() {
           <br></br>
                 <br></br>
                 {search.housing ?
+                <span>
                     <Chip
-                        icon={<RecordVoiceOverIcon id='counseling' />}
-                        label="Counseling"
-                        id='counseling'
+                        icon={<PetsIcon id='Dogs' />}
+                        label="Dogs"
+                        id='Dogs'
                         clickable
                         color="primary"
                         onClick={handleClick}
-                        variant={search.counseling ? 'default' : 'outlined'}
+                        variant={search.dogs ? 'default' : 'outlined'}
                     />
+                    &nbsp;
+                    <Chip
+                    icon={<PetsIcon id='Cats' />}
+                    label="Cats"
+                    id='cats'
+                    clickable
+                    color="primary"
+                    onClick={handleClick}
+                    variant={search.cats ? 'default' : 'outlined'}
+                />
+                </span>
+
                     :
                     ''
 
@@ -208,7 +231,7 @@ function Offered() {
                         couns={item.couns} contact={item.contact} roomSize={item.roomSize} stayLength={item.stayLength}
                         dog={item.dog} cat={item.cat}
                         housing={search.housing} nutrients={search.nutrients} clothes={search.clothes} supplies={search.supplies}
-                        medical={search.medical} counseling={search.counseling}
+                        medical={search.medical} counseling={search.counseling} dogs={search.dogs} cats={search.cats}
                     />
                 )}
 

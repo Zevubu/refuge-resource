@@ -25,7 +25,7 @@ function App() {
                 </Router>
 
             <Offered />
-            <Needed />
+            {/* <Needed /> */}
             
             </div>
         );
