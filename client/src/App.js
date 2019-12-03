@@ -14,14 +14,17 @@ function App() {
 
         return (
             <div className="App">
+                <neededForm />
+
+
                 <Router>
                     <div>
                         <Nav />
                         <Switch>
                             <Route path="/needed" component={Needed} />
                             <Route path="/offered" component={Offered}/>
-                            <Route exact path="/pages/forms/neededForm" component={neededForm}/>
-                            <Route exact path="/pages/forms/offeredform" component={OfferedForm}/>
+                            <Route exact path="/neededForm" component={neededForm}/>
+                            <Route exact path="/offeredform" component={OfferedForm}/>
                         </Switch>
                     </div>
                 </Router>
