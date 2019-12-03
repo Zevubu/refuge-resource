@@ -15,7 +15,6 @@ import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
 
 
-
 function Dummy(props){
  if ((props.housing === true && props.house === true  )     || 
      (props.nutrients === true && props.food === true )     ||
@@ -48,7 +47,7 @@ function Dummy(props){
 
             <img style={{width:'400px', height:'400px'}}src={props.img} alt={props.alt}/>
             <p>{props.text}</p>
-            <p>Contact: <a href={`mailto:${props.contact}?subject=${props.title}'s%20post`}>{props.contact}</a></p>
+            <p>Contact: <a href={props.contact}>{props.contact}</a></p>
             <hr />
         </div>
     )
