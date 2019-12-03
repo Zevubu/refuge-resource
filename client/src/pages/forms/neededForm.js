@@ -1,82 +1,312 @@
-import React from 'react';
+import React, {Component} from 'react';
+// import API from "../utils/API.js"
+class Form extends React.Component {
 
-function neededForm (props){
+    state = {
+        Name:"",
+        ContactInfo:"",
+        FamilySize: "",
+        NumofPet: "",
+        PetInfo:"",
+        CurrentCity:"",
+        Housing:"",
+        MedicalSupplies: "",
+        FinanceSupport: "",
+        Foodtype: "",
+        Clothing:"",
+        HouseHoldItems:"",
+        CounsMed: "",
+        PhotoLinks: "",
+        about: "",
+        MoreInfo: "",
+        
+    };
+  
+    handleNameChange = (event) => {
+      this.setState({
+        Name:event.target.value
 
-    return(
-        <div>
-            <form>
-                {/* name */}
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name-input"/>
-                <br/>
-                {/* email */}
-                <label for="email">email</label>
-                <input type="text" name="email" id="email-input"/>
-                <br/>
-                {/* linkToCFofV */}
-                <label for="link-to-pay">link to crowd fund or venmo.</label>
-                <input type="text" name="link-to-pay" id="link-to-pay-input"/>
-                <br/>
-                familySize
-                <section id="family-size">
-                    <p class="select-text"> Size of family</p>
-                    <select id="num-choice">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10+</option>
-                    </select>
-                </section>
-                {/* numOfPet */}
-                <section id="pet-num">
-                    <p class="select-text">Number of pets</p>
-                    <select id="pet-num">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10+</option>
-                    </select>
-                </section>
-                {/* <label for="pet-info">type of pet.</label>
-                <input type="text" name="pet-info" id="pet-info-input"/> */}
+        }
+      )
+    }
+    
+    handlecontactInfo = (event) => {
+      this.setState({
+        ContactInfo:event.target.value
 
+        }
+      )
+    };
+    
+    handlefamilySize = (event) => {
+      this.setState({
+        FamilySize:event.target.value
+
+        }
+      )
+    }
+    handlenumofPet = (event) => {
+      this.setState({
+        NumofPet:event.target.value
+
+        }
+      )
+    }
+    handlecurrentCity = (event) => {
+      this.setState({
+        PetInfo:event.target.value
+
+        }
+      )
+    }
+    handlehousing = (event) => {
+      this.setState({
+        CurrentCity:event.target.value
+
+        }
+      )
+    }
+    handlemedicalSupplies = (event) => {
+      this.setState({
+        Housing:event.target.value
+
+        }
+      )
+    }
+    handlefinanceSupport = (event) => {
+      this.setState({
+        MedicalSupplies:event.target.value
+
+        }
+      )
+    }
+    handlefoodtype = (event) => {
+      this.setState({
+        FinanceSupport:event.target.value
+
+        }
+      )
+    }
+    handleclothing = (event) => {
+      this.setState({
+        Foodtype:event.target.value
+
+        }
+      )
+    }
+    handlehouseHoldItems = (event) => {
+      this.setState({
+        Clothing:event.target.value
+
+        }
+      )
+    }
+   
+    handlecousMed = (event) => {
+      this.setState({
+        CounsMed:event.target.value
+
+        }
+      )
+    }
+    handlephotoLinks = (event) => {
+      this.setState({
+        PhotoLinks:event.target.value
+
+        }
+      )
+    }
+    handleAbout= (event) => {
+      this.setState({
+        About:event.target.value
+
+        }
+      )
+    }
+    handlemoreInfo = (event) => {
+      this.setState({
+        MoreInfo:event.target.value
+
+        }
+      )
+    };
+    
+    
+   
+    
+        render() {
+    
+        
+        return(
                 
+                <div>
+                  <h1>Hello World!</h1>
+                <form onSubmit= {this.handleSubmit}>
+                  <div>
+                  <label>Name: </label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.name}
+                    Onchange={e => this.handleNameChange}
+                    />
+                   </div>
+                   
+                   
+                    <div>
+                   <label>contactInfo :</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.contactInfo}
+                    Onchange={e => this.handlecontactInfo}
+                    />
+                  </div>
+                   
+                    
+                    <div>
+                   <label>family size: </label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.familySize}
+                    Onchange={e => this.handlefamilySize}
+                    />
+                    </div>
+                    
+                    <div>
+                   <label> number of Pets:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.numofPet}
+                    Onchange={e => this.handlenumofPet}
+                    />
+                   </div>
+                   
+                   <div>
+                   <label>Current City:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.currentCity}
+                    Onchange={e => this.handlecurrentCity}
+                    />
+                    </div>
+                  <div>
+                   <label>Housing:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.housing}
+                    Onchange={e => this.handlehousing}
+                    />
+                  
+                  </div>
+                  <div>
+                   <label>Medical Supplies:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.medicalSupplies}
+                    Onchange={e => this.handlemedicalSupplies}
+                    />
+                  </div>
+                  <div>
+                   <label>Finance Support:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.financeSupport}
+                    Onchange={e => this.handlefinanceSupport}
+                    />
+                  </div>
+                  <div>
+                   <label>Food Type:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.foodtype}
+                    Onchange={e => this.handlefoodtype}
+                    />
+                  </div>
+                  <div>
+                   <label>Clothing:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.clothing}
+                    Onchange={e => this.handleclothing}
+                    />
+                  </div>
+                  <div>
+                   <label>house Hold Items:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.houseHoldItems}
+                    Onchange={e => this.handlehouseHoldItems}
+                    />
+                  </div>
+                  <div>
+                   <label>counsMed:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.counsMed}
+                    Onchange={e => this.handlecousMed}
+                    />
+                  </div>
+                  <div>
+                   <label>photoLinks:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.photoLinks}
+                    Onchange={e => this.handlephotoLinks}
+                    />
+                  </div>
+                  <div>
+                   <label>About:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.About}
+                    Onchange={e => this.handleAbout}
+                    />
+                  </div>
+                  <div>
+                   <label>moreInfo:</label>
+                  <input
+                    type="text"
+                    
+                    value={this.state.moreInfo}
+                    Onchange={e => this.handlemoreInfo}
+                    />
+                  </div>
+                
+                  <button type="submit">Submit</button>
+                   
+                   </form>
+                   </div>
+                   
 
-                {/* <input type="checkbox" name="checkbox-thing"> */}
+                      
+                    
+                
+                     
+                   
+            
+    
+        
+        )
+    
+    }
+    
 
 
-{/*                 
-                petInfo,
-                currentCity,
-                willingToRelocate,
-                housing,
-                medicalSupplies, 
-                financeSupport,
-                food,
-                clothing,
-                houseHoldItems,
-                counsMed,
-                photoLinks
-                About
-                moreInfo
-                */}
-            </form>
-
-        </div>
-    )
 
 }
 
-export default neededForm;
+
+export default Form;
