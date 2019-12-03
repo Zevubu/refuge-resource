@@ -18,13 +18,15 @@ function App() {
                     <div>
                         <Nav />
                         <Switch>
+                            <Route path="/needed" component={Needed} />
+                            <Route path="/offered" component={Offered}/>
                             <Route exact path="/pages/forms/neededForm" component={neededForm}/>
                             <Route exact path="/pages/forms/offeredform" component={OfferedForm}/>
                         </Switch>
                     </div>
                 </Router>
 
-            <Offered />
+            {/* <Offered /> */}
             {/* <Needed /> */}
             
             </div>

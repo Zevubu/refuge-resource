@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Dummy from './components/dummy'
+import DummyNeeded from './components/dummyNeeded'
 // import Nav from './components/Nav'
 // import ReactDOM from "react-dom";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -196,7 +196,7 @@ function Needed() {
                 <hr />
                 {need.map((item, key) =>
 
-                    <Dummy
+                    <DummyNeeded
                         key={item.name} title={item.name} text={item.text} img={item.img} location={item.location}
                         house={item.house} food={item.food} clothing={item.clothing} med={item.med} items={item.items}
                         couns={item.couns} contact={item.contact} roomSize={item.roomSize} stayLength={item.stayLength}
