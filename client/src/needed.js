@@ -35,27 +35,24 @@ function Needed() {
 
         const [need, setNeed] = useState([
             {
-              "house": true,
-              "dog": false,
-              "cat": false,
-              "med": false,
-              "food": false,
-              "clothing": false,
-              "items": false,
-              "couns": false,
-              "other": false,
-              "img": [
-                "https://dsmpublicartfoundation.org/wp-content/uploads/1970/01/3579-Louis-Vuitton-Crack-House-Jordan-Weber.jpg"
-              ],
-              "_id": "5dd6597e0daaf643eda156e3",
-              "name": "Zevs",
-              "contact": "email@email.com",
-              "location": "oaktown",
-              "roomSize": 2,
-              "stayLength": "3 month",
-              "text": "I have stuff to say!",
-              "more": "string beans and rice!",
-              "__v": 0
+                name:"Jimbo",
+                contactInfo:"jimbo",
+                linkToCFofV:{type:String, required:false},
+                familySize:{ type: Number, default:1},
+                numOfPet:{ type:Number, default:0 },
+                petInfo:{ type:String, required: false},
+                currentCity:{ type: String, required:true },
+                willingToRelocate:{ type: Boolean, default:false},
+                housing:{ type:Boolean, default:false },
+                medicalSupplies:{ type: Boolean, default:false},
+                financeSupport: {type:Boolean, default:false},
+                food:{ type: Boolean, default:false},
+                clothing:{ type: Boolean, default:false},
+                houseHoldItems:{ type: Boolean, default:false},
+                counsMed:{ type: Boolean, default:false},
+                photoLinks:[{type:String, required:false}],
+                About: {type:String, required:true},
+                moreInfo:{type:String, required:false}
             }
         ]);
 
