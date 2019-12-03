@@ -3,23 +3,24 @@ const Schema = mongoose.Schema;
 
 const neededSchema = new Schema({
     name:{ type: String, required: true},
-    contactInfo:{type: String, required: true},
+    contact:{type: String, required: true},
     linkToCFofV:{type:String, required:false},
     familySize:{ type: Number, default:1},
-    numOfPet:{ type:Number, default:0 },
+    dog:{ type:Boolean, default:false },
+    cat:{ type:Boolean, default:false },
     petInfo:{ type:String, required: false},
-    currentCity:{ type: String, required:true },
+    location:{ type: String, required:true },
     willingToRelocate:{ type: Boolean, default:false},
     housing:{ type:Boolean, default:false },
-    medicalSupplies:{ type: Boolean, default:false},
-    financeSupport: {type:Boolean, default:false},
+    financialSupport: {type:Boolean, default:false},
+    med:{ type: Boolean, default:false},
     food:{ type: Boolean, default:false},
     clothing:{ type: Boolean, default:false},
-    houseHoldItems:{ type: Boolean, default:false},
-    counsMed:{ type: Boolean, default:false},
-    photoLinks:[{type:String, required:false}],
-    About: {type:String, required:true},
-    moreInfo:{type:String, required:false}
+    items:{ type: Boolean, default:false},
+    couns:{ type: Boolean, default:false},
+    img:[{type:String, required:false}],
+    text: {type:String, required:true},
+    more:{type:String, required:false}
 });
 
 const Needed = mongoose.model("Needed", neededSchema);

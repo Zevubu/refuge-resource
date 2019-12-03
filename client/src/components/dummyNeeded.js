@@ -15,7 +15,7 @@ import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
 
 
-function Dummy(props){
+function DummyNeeded(props){
  if ((props.housing === true && props.house === true  )     || 
      (props.nutrients === true && props.food === true )     ||
      (props.supplies === true && props.items === true )     ||
@@ -30,7 +30,7 @@ function Dummy(props){
             <h1>{props.title}</h1>
             <h3>Located @:{props.location}</h3>
 
-            <h2>Offering:&nbsp;
+            <h2>Need:&nbsp;
                 {props.house ? <Chip label='Housing' icon={<HouseIcon />}/> : ''}&nbsp;
                 {props.food ? <Chip label='Food' icon={<KitchenIcon/>}/> : ''}&nbsp;
                 {props.clothing ? <Chip label='Clothing' icon={<AccessibilityIcon />}/> : ''}&nbsp;
@@ -57,5 +57,4 @@ function Dummy(props){
             }
 }
 
-
-export default Dummy 
+export default DummyNeeded 

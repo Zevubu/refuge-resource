@@ -1,0 +1,20 @@
+{   
+    "name": "00000000",
+    "contact": "email@email.com",
+    "linkToCFofV": "gofundme.com",
+    "familySize": 0,
+    "dog": true,
+    "cat": false,
+    "location": "00000000",
+    "willingToRelocate": false,
+    "house": true,
+    "financeSupport":  false,
+    "food": false,
+    "clothing": false,
+    "items": false,
+    "couns": false,
+    "med": false,
+    "img":["https://winklevosscapital.com/wp-content/uploads/2014/10/2014-09-16-Anoynmous-The-Rise-of-Personal-Networks.jpg"],
+    "text": "00000000",
+    "more":"00000000"
+}
