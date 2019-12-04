@@ -39,7 +39,7 @@ function DummyNeeded(props){
                 {props.couns ? <Chip label='Counseling-Services' icon={<RecordVoiceOverIcon />} />: ''}&nbsp;
             </h2>
 
-            {props.house ? <h3>Room For:&nbsp;<Chip label={props.roomSize} />&nbsp; Length:&nbsp;<Chip label={props.stayLength} /> </h3> : ''}
+            <h3>Family Size: {props.familySize} </h3>
             {props.house ? <h3>Pets ok?&nbsp;
                 {props.dog ? <Chip label='Dogs' icon={<PetsIcon />} /> : <Chip label='No Dogs' icon={<NotInterestedIcon />}/>}  &nbsp;
                 {props.cat ? <Chip label='Cats' icon={<PetsIcon />} /> : <Chip label='No Cats' icon={<NotInterestedIcon />}/>}  &nbsp;
@@ -47,7 +47,7 @@ function DummyNeeded(props){
 
             <img style={{width:'400px', height:'400px'}}src={props.img} alt={props.alt}/>
             <p>{props.text}</p>
-            <p>Contact: <a href={props.contact}>{props.contact}</a></p>
+            <p>Contact: <a href={`mailto:${props.contact}?subject=${props.title}'s%20post`}>{props.contact}</a></p>
             <hr />
         </div>
     )
