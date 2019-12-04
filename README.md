@@ -3,9 +3,12 @@
 
 Things to work on:
 
+    
     navBar, amit
     offered, form kay
     needed page, andrew
+    server Zev
+    DB models Zev 
     email connect to turniaray opereattor. 
     counsle medical
     counsMed model

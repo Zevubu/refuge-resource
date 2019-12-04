@@ -4,7 +4,7 @@ export default {
     getNeeded: function(){
         return axios.get("/api/needed");
     },
-    getNeeded: function(id){
+    getNeededByID: function(id){
         return axios.get("api/needed/" + id);
     },
     deleteNeeded: function(id){
@@ -16,7 +16,7 @@ export default {
     getOffered: function(){
         return axios.get("/api/offered");
     },
-    getOffered: function(id){
+    getOfferedByID: function(id){
         return axios.get("api/offered/" + id);
     },
     deleteOffered: function(id){
@@ -28,7 +28,7 @@ export default {
     getCounsMed: function(){
         return axios.get("/api/counsmed");
     },
-    getCounsMed: function(id){
+    getCounsMedByID: function(id){
         return axios.get("api/counsmed/" + id);
     },
     deleteCounsMed: function(id){
