@@ -11,7 +11,7 @@ export default {
         return axios.delete("/api/needed/" + id);
     },
     saveNeeded: function(neededData){
-        return axios.post("/api/needed/"+ neededData);
+        return axios.post("/api/needed/", neededData);
     },
     getOffered: function(){
         return axios.get("/api/offered");
