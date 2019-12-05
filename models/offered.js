@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 const offeredSchema = new Schema({
     name:{ type: String, required: true},
-    contact:{type: String, required: false},
-    location:{ type: String, required:true },
+    contact:{type: String, required: true},
+    location:{ type: String, required:true},
     house:{ type:Boolean, default:false },
     roomSize:{ type: Number, required:false},
     stayLength:{type:String, required:false},
-    dog:{ type:Boolean, default:false },
+    dog:{ type:Boolean, default:false},
     cat:{ type:Boolean, default:false },
     med:{ type: Boolean, default:false},
     food:{ type: Boolean, default:false},
