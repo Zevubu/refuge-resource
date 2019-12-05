@@ -3,7 +3,7 @@ import { Input, TextArea, FormBtn } from "../../components/Form"
 import API from "../../utils/API"
 
 
-class Form extends Component {
+class neededForm extends Component {
   state = {
     name:"",
     contactInfo:"",
@@ -105,11 +105,10 @@ class Form extends Component {
     
     render() {
       return(     
-        <div>
-          <h1>Hello World!</h1>
+      <div>
         <form>
           <div>
-            <label>Name: </label>
+            <label>Name:</label>
             <Input
               value={this.state.name}
               name="name"
@@ -118,7 +117,7 @@ class Form extends Component {
           </div>
             
           <div>
-            <label>contactInfo :</label>
+            <label>Email address:</label>
             <Input
               type="text"
               name="contactInfo"
@@ -130,7 +129,7 @@ class Form extends Component {
             
             
           <div>
-            <label>family size: </label>
+            <label>Family size:</label>
             <Input
               type="number"
               name="familySize"
@@ -140,7 +139,7 @@ class Form extends Component {
           </div>          
             
           <div>
-            <label>Current City:</label>
+            <label>Current city:</label>
             <Input
               type="text"
               name="currentCity"
@@ -172,7 +171,7 @@ class Form extends Component {
           </div>
 
           <div>
-            <label>Link to crowd funding, Venmo, or other payment sites.:</label>
+            <label>Link to crowd funding, Venmo, or other payment sites:</label>
             <Input
               type="text"
               name="linkToFund"
@@ -192,7 +191,7 @@ class Form extends Component {
           </div>
 
           <div>
-            <label>moreInfo:</label>
+            <label>More Info:</label>
             <TextArea
               type="text"
               name="moreInfo"
@@ -237,7 +236,7 @@ class Form extends Component {
               />
             </div>
             <div>
-              <label>Food Type:</label>
+              <label>Food:</label>
               <Input
                 // type="text"
                 type="checkbox" 
@@ -259,7 +258,7 @@ class Form extends Component {
               />
             </div>
             <div>
-              <label>house Hold Items:</label>
+              <label>House Hold Items:</label>
               <Input
                 // type="text"
                 type="checkbox" 
@@ -270,7 +269,7 @@ class Form extends Component {
               />
             </div>
             <div>
-              <label>counsMed:</label>
+              <label>Counseling or Medical Assistence:</label>
               <Input
                 // type="text"
                 type="checkbox" 
@@ -330,4 +329,4 @@ class Form extends Component {
 }
 
 
-export default Form;
+export default neededForm;
