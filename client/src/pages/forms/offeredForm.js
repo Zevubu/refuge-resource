@@ -11,11 +11,11 @@ class offeredForm extends Component {
     house:false, //x
     roomSize:0,//x
     stayLength:"",//x
-    dog:false,
-    cat:false,
-    med:false,
-    food:false,
-    clothing:false,
+    dog:false, //x  
+    cat:false,// x
+    med:false,//x
+    food:false,//x
+    clothing:false,//x
     items:false,
     couns:false,
     other:false,
@@ -54,8 +54,8 @@ class offeredForm extends Component {
       event.preventDefault();
       console.log(`event: ${event}`);
       console.log(`saved needed: ${JSON.stringify(this.state)}`)
-      if(this.state.name && this.state.contactInfo){
-        API.saveNeeded({
+      if(this.state.name && this.state.contact){
+        API.saveOffered({
             name:this.state.name,
             contact:this.state.contact,
             location:this.state.location,
@@ -135,18 +135,8 @@ class offeredForm extends Component {
             <label>Photo Link:</label>
             <Input
               type="text"
-              name="photoLinks"
-              value={this.state.photoLinks}
-              onChange={this.handleInputChange}
-            />
-          </div>
-
-          <div>
-            <label>Link to crowd funding, Venmo, or other payment sites.:</label>
-            <Input
-              type="text"
-              name="linkToFund"
-              value={this.state.linkToFund}
+              name="img"
+              value={this.state.img}
               onChange={this.handleInputChange}
             />
           </div>
@@ -155,55 +145,15 @@ class offeredForm extends Component {
             <label>About:</label>
             <TextArea
               type="text"
-              name="about"
-              value={this.state.about}
+              name="text"
+              value={this.state.text}
               onChange={this.handleInputChange}
             />
           </div>
 
-          <div>
-            <label>moreInfo:</label>
-            <TextArea
-              type="text"
-              name="moreInfo"
-              value={this.state.moreInfo}
-              onChange={this.handleInputChange}
-            />
-          </div>
+          
           <div>
             <h3>Please mark everything your offereing.</h3>
-            <div>
-              <label>Housing:</label>
-              <Input
-                // type="text"
-                type="checkbox" 
-                checked={this.state.house}
-                name="house"
-                value={this.state.house}
-                onChange={this.handleRadioChange}
-              />
-            
-            </div>
-
-            <div>
-                <label>How many poeple do you have room for:</label>
-                <Input
-                type="number"
-                name="roomSize"
-                value={this.state.roomSize}
-                onChange={this.handleInputChange}
-                />
-            </div>
-
-            <div>
-            <label>Length of stay:</label>
-            <TextArea
-              type="text"
-              name="stayLength"
-              value={this.state.stayLength}
-              onChange={this.handleInputChange}
-            />
-          </div>
             <div>
               <label>Medical Supplies:</label>
               <Input
@@ -249,30 +199,73 @@ class offeredForm extends Component {
               />
             </div>
             <div>
-              <label>house Hold Items:</label>
+              <label>House Hold Items:</label>
               <Input
                 // type="text"
                 type="checkbox" 
-                name="houseHoldItems"
-                checked={this.state.houseHoldItems}
-                value={this.state.houseHoldItems}
+                name="items"
+                checked={this.state.items}
+                value={this.state.items}
                 onChange={this.handleRadioChange}
               />
             </div>
+            
             <div>
-              <label>counsMed:</label>
+              <label>Counseling:</label>
               <Input
                 // type="text"
                 type="checkbox" 
-                name="counsMed"
-                checked={this.state.counsMed}
-                value={this.state.counsMed}
+                name="couns"
+                checked={this.state.couns}
+                value={this.state.couns}
                 onChange={this.handleRadioChange}
               />
             </div>
           </div>
           <div>
-            <h2>Do you have pets?</h2>
+            <label>Other Items:</label>
+            <label>please specify in more info</label>
+            <Input
+              // type="text"
+              type="checkbox" 
+              name="houseHoldItems"
+              checked={this.state.Items}
+              value={this.state.Items}
+              onChange={this.handleRadioChange}
+            />
+          </div>
+           <div>
+              <label>Housing:</label>
+              <Input
+                // type="text"
+                type="checkbox" 
+                checked={this.state.house}
+                name="house"
+                value={this.state.house}
+                onChange={this.handleRadioChange}
+              />
+            </div>
+          <div>
+            <h3>If your offering housing please fill out the fallowing.</h3>
+            <div>
+                <label>How many poeple do you have room for:</label>
+                <Input
+                type="number"
+                name="roomSize"
+                value={this.state.roomSize}
+                onChange={this.handleInputChange}
+                />
+            </div>
+
+            <div>
+              <label>Length of stay:</label>
+              <Input
+                type="text"
+                name="stayLength"
+                value={this.state.stayLength}
+                onChange={this.handleInputChange}
+              />
+            </div>
             <div>
               <label>Dogs:</label>
               <Input
@@ -293,21 +286,19 @@ class offeredForm extends Component {
                 onChange={this.handleRadioChange}
               />
             </div>
-
-            <div>
-            <label>Pet Type:</label>
-            <Input
+          </div>
+          <div>
+            <label>More Info:</label>
+            <TextArea
               type="text"
-              name="petInfo"
-              value={this.state.petInfo}
+              name="more"
+              value={this.state.more}
               onChange={this.handleInputChange}
             />
-            </div>
           </div>
-          
 
           <FormBtn
-            disabled={!(this.state.name && this.state.contactInfo)}
+            disabled={!(this.state.name && this.state.contact)}
             onClick={this.handleFormSubmit}
           >
             Submit
