@@ -6,6 +6,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -63,6 +69,7 @@ function TabPanel(props) {
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
+    
   
     return (
       <div className={classes.root}>
@@ -73,20 +80,16 @@ function TabPanel(props) {
             onChange={handleChange}
             aria-label="nav tabs example"
           >
-            <LinkTab label="Help Needed" href="/needed" {...a11yProps(0)} />
-            <LinkTab label="Help Offered" href="/offered" {...a11yProps(1)} />
-            <LinkTab label="Post" href="/neededForm" {...a11yProps(2)} />
+            <Link to="/needed">Help Needed</Link>
+            <Link to="/offered">Help Offered</Link>
+            <Link to="/neededForm">I Need Help</Link>
+            <Link to="/offeredForm">I Can Help</Link>
+            
+            
+
           </Tabs>
         </AppBar>
-        <TabPanel value={value} index={0}>
-          <b>Help Needed</b>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <b>Help Offered</b>
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <b>Post</b>
-        </TabPanel>
+
       </div>
     );
   }
