@@ -23,7 +23,7 @@ export default {
         return axios.delete("/api/offered/" + id);
     },
     saveOffered: function(neededData){
-        return axios.post("/api/offered/"+ neededData);
+        return axios.post("/api/offered/", neededData);
     },
     getCounsMed: function(){
         return axios.get("/api/counsmed");
@@ -35,6 +35,6 @@ export default {
         return axios.delete("/api/counsmed/" + id);
     },
     saveCounsMed: function(neededData){
-        return axios.post("/api/counsmed/" + neededData);
+        return axios.post("/api/counsmed/", neededData);
     }
 };
