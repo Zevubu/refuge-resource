@@ -5,14 +5,14 @@ import API from "../../utils/API"
 
 class neededForm extends Component {
   state = {
-    name:"",
-    contactInfo:"",
+    name:"", //*
+    contactInfo:"",//*
     linkToFund:"",
     familySize:"",
     dogs:false,
     cats:false,
     petInfo:"",
-    currentCity:"",
+    currentCity:"",//*
     willingToRelocate:false,
     housing:false,
     financeSupport:false,
@@ -22,7 +22,7 @@ class neededForm extends Component {
     houseHoldItems:false,
     counsMed: false,
     photoLinks: "",
-    about:"",
+    about:"",//*
     moreInfo:"",  
   };
 
@@ -56,7 +56,7 @@ class neededForm extends Component {
       event.preventDefault();
       console.log(`event: ${event}`);
       console.log(`saved needed: ${JSON.stringify(this.state)}`)
-      if(this.state.name && this.state.contactInfo){
+      if(this.state.name && this.state.contactInfo && this.state.currentCity && this.state.about){
         API.saveNeeded({
           name:this.state.name,
           contact:this.state.contactInfo,
@@ -108,7 +108,7 @@ class neededForm extends Component {
       <div>
         <form>
           <div>
-            <label>Name:</label>
+            <label>*Name:</label>
             <Input
               value={this.state.name}
               name="name"
@@ -117,7 +117,7 @@ class neededForm extends Component {
           </div>
             
           <div>
-            <label>Email address:</label>
+            <label>*Email address:</label>
             <Input
               type="text"
               name="contactInfo"
@@ -139,7 +139,7 @@ class neededForm extends Component {
           </div>          
             
           <div>
-            <label>Current city:</label>
+            <label>*Current city:</label>
             <Input
               type="text"
               name="currentCity"
@@ -170,6 +170,17 @@ class neededForm extends Component {
             />
           </div>
 
+          
+
+          <div>
+            <label>*About:</label>
+            <TextArea
+              type="text"
+              name="about"
+              value={this.state.about}
+              onChange={this.handleInputChange}
+            />
+          </div>
           <div>
             <label>Link to crowd funding, Venmo, or other payment sites:</label>
             <Input
@@ -179,26 +190,7 @@ class neededForm extends Component {
               onChange={this.handleInputChange}
             />
           </div>
-
-          <div>
-            <label>About:</label>
-            <TextArea
-              type="text"
-              name="about"
-              value={this.state.about}
-              onChange={this.handleInputChange}
-            />
-          </div>
-
-          <div>
-            <label>More Info:</label>
-            <TextArea
-              type="text"
-              name="moreInfo"
-              value={this.state.moreInfo}
-              onChange={this.handleInputChange}
-            />
-          </div>
+         
           <div>
             <h3>Please mark all you may need.</h3>
             <div>
@@ -313,10 +305,18 @@ class neededForm extends Component {
             />
             </div>
           </div>
-          
+           <div>
+            <label>More Info:</label>
+            <TextArea
+              type="text"
+              name="moreInfo"
+              value={this.state.moreInfo}
+              onChange={this.handleInputChange}
+            />
+          </div>
 
           <FormBtn
-            disabled={!(this.state.name && this.state.contactInfo)}
+            disabled={!(this.state.name && this.state.contactInfo && this.state.currentCity && this.state.about)}
             onClick={this.handleFormSubmit}
           >
             Submit

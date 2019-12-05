@@ -54,7 +54,7 @@ class offeredForm extends Component {
       event.preventDefault();
       console.log(`event: ${event}`);
       console.log(`saved needed: ${JSON.stringify(this.state)}`)
-      if(this.state.name && this.state.contact){
+      if(this.state.name && this.state.contact && this.state.location && this.state.text){
         API.saveOffered({
             name:this.state.name,
             contact:this.state.contact,
@@ -75,9 +75,9 @@ class offeredForm extends Component {
             more:this.state.more  
         })
         .then(res => this.setState({
-        name:"",
-        contact:"",
-        location:"",
+        name:"", //*
+        contact:"",//*
+        location:"",//*
         house:false,
         roomSize:0,
         stayLength:"",
@@ -90,7 +90,7 @@ class offeredForm extends Component {
         couns:false,
         other:false,
         img:"",
-        text:"",
+        text:"",//*
         more:""  
         }))
         .catch(err => console.log(err))
@@ -102,7 +102,7 @@ class offeredForm extends Component {
         <div>
         <form>
           <div>
-            <label>Name:</label>
+            <label>*Name:</label>
             <Input
               value={this.state.name}
               name="name"
@@ -111,7 +111,7 @@ class offeredForm extends Component {
           </div>
             
           <div>
-            <label>Email:</label>
+            <label>*Email:</label>
             <Input
               type="text"
               name="contact"
@@ -122,7 +122,7 @@ class offeredForm extends Component {
           </div>         
             
           <div>
-            <label>Current City:</label>
+            <label>*Current City:</label>
             <Input
               type="text"
               name="location"
@@ -142,7 +142,7 @@ class offeredForm extends Component {
           </div>
 
           <div>
-            <label>About:</label>
+            <label>*About:</label>
             <TextArea
               type="text"
               name="text"
@@ -298,7 +298,7 @@ class offeredForm extends Component {
           </div>
 
           <FormBtn
-            disabled={!(this.state.name && this.state.contact)}
+            disabled={!(this.state.name && this.state.contact && this.state.location && this.state.text)}
             onClick={this.handleFormSubmit}
           >
             Submit
