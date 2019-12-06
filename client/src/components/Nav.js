@@ -6,11 +6,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import OfferedForm from "../pages/forms/offeredForm"
-import Offered from "../offered";
-import Needed from "../needed";
-import NeededForm from '../pages/forms/neededForm';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -68,6 +69,7 @@ function TabPanel(props) {
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
+    
   
     return (
       <div className={classes.root}>
@@ -78,24 +80,37 @@ function TabPanel(props) {
             onChange={handleChange}
             aria-label="nav tabs example"
           >
-            <LinkTab label="Help Needed"  onClick={<a href="/needed" clicked={true}/>} {...a11yProps(0)} />
-            <LinkTab label="Help Offered" path="/offered" {...a11yProps(1)} />
-            <LinkTab label="Post Needed" path="/neededForm" {...a11yProps(2)} />
-            <LinkTab label="Post Offered" path="/offeredForm" {...a11yProps(3)} />
+
+            //<LinkTab label="Help Needed"  onClick={<a href="/needed" clicked={true}/>} {...a11yProps(0)} />
+            //<LinkTab label="Help Offered" path="/offered" {...a11yProps(1)} />
+            //<LinkTab label="Post Needed" path="/neededForm" {...a11yProps(2)} />
+            //<LinkTab label="Post Offered" path="/offeredForm" {...a11yProps(3)} />
+          //</Tabs>
+        //</AppBar>
+        //<TabPanel value={value} index={0}>
+          //<b>Help Needed</b>
+        //</TabPanel>
+        //<TabPanel value={value} index={1}>
+          //<b>Help Offered</b>
+        //</TabPanel>
+        //<TabPanel value={value} index={2}>
+          //<b>I Need Help.</b>
+        //</TabPanel>
+        //<TabPanel value={value} index={3}>
+          //<b>I Want To Help.</b>
+        //</TabPanel>
+
+            <Link to="/needed">Help Needed</Link>
+            <Link to="/offered">Help Offered</Link>
+            <Link to="/neededForm">I Need Help</Link>
+            <Link to="/offeredForm">I Can Help</Link>
+            
+            
+
           </Tabs>
         </AppBar>
-        <TabPanel value={value} index={0}>
-          <b>Help Needed</b>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <b>Help Offered</b>
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <b>I Need Help.</b>
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          <b>I Want To Help.</b>
-        </TabPanel>
+
+
       </div>
     );
   }

@@ -20,6 +20,7 @@ function App() {
                 <Router>
                     <div>
                         <Nav />
+                        &nbsp;
                         <Switch>
                             <Route path="/needed" component={Needed} />
                             <Route path="/offered" component={Offered}/>
