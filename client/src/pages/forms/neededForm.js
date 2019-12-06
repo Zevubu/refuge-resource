@@ -296,7 +296,7 @@ class neededForm extends Component {
             </div>
 
             <div>
-            <label>Pet Type:</label>
+            <label>Pet Info:</label>
             <Input
               type="text"
               name="petInfo"

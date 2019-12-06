@@ -80,6 +80,26 @@ function TabPanel(props) {
             onChange={handleChange}
             aria-label="nav tabs example"
           >
+
+            //<LinkTab label="Help Needed"  onClick={<a href="/needed" clicked={true}/>} {...a11yProps(0)} />
+            //<LinkTab label="Help Offered" path="/offered" {...a11yProps(1)} />
+            //<LinkTab label="Post Needed" path="/neededForm" {...a11yProps(2)} />
+            //<LinkTab label="Post Offered" path="/offeredForm" {...a11yProps(3)} />
+          //</Tabs>
+        //</AppBar>
+        //<TabPanel value={value} index={0}>
+          //<b>Help Needed</b>
+        //</TabPanel>
+        //<TabPanel value={value} index={1}>
+          //<b>Help Offered</b>
+        //</TabPanel>
+        //<TabPanel value={value} index={2}>
+          //<b>I Need Help.</b>
+        //</TabPanel>
+        //<TabPanel value={value} index={3}>
+          //<b>I Want To Help.</b>
+        //</TabPanel>
+
             <Link to="/needed">Help Needed</Link>
             <Link to="/offered">Help Offered</Link>
             <Link to="/neededForm">I Need Help</Link>
@@ -89,6 +109,7 @@ function TabPanel(props) {
 
           </Tabs>
         </AppBar>
+
 
       </div>
     );
