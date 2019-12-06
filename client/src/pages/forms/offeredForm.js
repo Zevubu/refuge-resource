@@ -54,6 +54,9 @@ class offeredForm extends Component {
       event.preventDefault();
       console.log(`event: ${event}`);
       console.log(`saved needed: ${JSON.stringify(this.state)}`)
+      if(this.state.img === ""){
+        this.state.img = "http://www.macedonrangeshalls.com.au/wp-content/uploads/2017/10/image-not-found.png"
+      }
       if(this.state.name && this.state.contact && this.state.location && this.state.text){
         API.saveOffered({
             name:this.state.name,
