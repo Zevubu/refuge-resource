@@ -12,6 +12,20 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Needed from '../needed'
+
+function Link1 (){
+return <Link to="/needed">Help Needed</Link>
+}
+function Link2 (){
+  return <Link to="/offered">Help Needed</Link>
+  }
+  function Link3 (){
+    return <Link to="/neededForm">Help Needed</Link>
+    }
+    function Link4 (){
+      return <Link to="/offeredForm">Help Needed</Link>
+      }
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -48,7 +62,7 @@ function TabPanel(props) {
       <Tab
         component="a"
         onClick={event => {
-          event.preventDefault();
+          // event.preventDefault();
         }}
         {...props}
       />
@@ -81,35 +95,24 @@ function TabPanel(props) {
             aria-label="nav tabs example"
           >
 
-            //<LinkTab label="Help Needed"  onClick={<a href="/needed" clicked={true}/>} {...a11yProps(0)} />
-            //<LinkTab label="Help Offered" path="/offered" {...a11yProps(1)} />
-            //<LinkTab label="Post Needed" path="/neededForm" {...a11yProps(2)} />
-            //<LinkTab label="Post Offered" path="/offeredForm" {...a11yProps(3)} />
-          //</Tabs>
-        //</AppBar>
-        //<TabPanel value={value} index={0}>
-          //<b>Help Needed</b>
-        //</TabPanel>
-        //<TabPanel value={value} index={1}>
-          //<b>Help Offered</b>
-        //</TabPanel>
-        //<TabPanel value={value} index={2}>
-          //<b>I Need Help.</b>
-        //</TabPanel>
-        //<TabPanel value={value} index={3}>
-          //<b>I Want To Help.</b>
-        //</TabPanel>
-
-            <Link to="/needed">Help Needed</Link>
-            <Link to="/offered">Help Offered</Link>
-            <Link to="/neededForm">I Need Help</Link>
-            <Link to="/offeredForm">I Can Help</Link>
-            
-            
-
+            <LinkTab label="Help Needed"  component={Link} to="/needed" {...a11yProps(0)}/>
+            <LinkTab label="Help Offered" component={Link} to="/offered" {...a11yProps(1)} />
+          <LinkTab label="Post Needed" component={Link} to="/neededform" {...a11yProps(2)} />
+          <LinkTab label="Post Offered" component={Link} to="/offeredform" {...a11yProps(3)} />
           </Tabs>
-        </AppBar>
-
+    </AppBar>
+        <TabPanel value={value} index={0}>
+          <b>Help Needed</b>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <b>Help Offered</b>
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <b>I Need Help.</b>
+          </TabPanel>
+        <TabPanel value={value} index={3}>
+          <b>I Want To Help.</b>
+        </TabPanel>
 
       </div>
     );
