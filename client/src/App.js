@@ -8,13 +8,13 @@ import OfferedForm from "./pages/forms/offeredForm"
 import Offered from "./offered.js";
 import Needed from "./needed.js";
 import NeededForm from './pages/forms/neededForm';
+import home from './pages/home';
 
 function App() {
 
 
         return (
             <div className="App">
-                {/* <NeededForm /> */}
 
 
                 <Router>
@@ -26,13 +26,12 @@ function App() {
                             <Route path="/offered" component={Offered}/>
                             <Route exact path="/neededForm" component={NeededForm}/>
                             <Route exact path="/offeredform" component={OfferedForm}/>
+                            <Route path="/" component={home}/>
                         </Switch>
                     </div>
                 </Router>
 
-            {/* <Offered /> */}
-            {/* <Needed /> */}
-            
+                
             </div>
         );
     }

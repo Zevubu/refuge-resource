@@ -113,10 +113,10 @@ function TabPanel(props) {
           <b>Help Offered</b>
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <b>I Need Help.</b>
+          <b>I Need Help</b>
           </TabPanel>
         <TabPanel value={value} index={3}>
-          <b>I Want To Help.</b>
+          <b>I Want To Help</b>
         </TabPanel>
 
       </div>
