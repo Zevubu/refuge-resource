@@ -94,12 +94,17 @@ function TabPanel(props) {
             onChange={handleChange}
             aria-label="nav tabs example"
           >
-
+         
             <LinkTab label="Help Needed"  component={Link} to="/needed" {...a11yProps(0)}/>
             <LinkTab label="Help Offered" component={Link} to="/offered" {...a11yProps(1)} />
+            </Tabs>
+            <Tabs variant="fullWidth"
+            value={value}
+            onChange={handleChange}
+            aria-label="nav tabs example">
           <LinkTab label="Post Needed" component={Link} to="/neededform" {...a11yProps(2)} />
           <LinkTab label="Post Offered" component={Link} to="/offeredform" {...a11yProps(3)} />
-          </Tabs>
+            </Tabs>
     </AppBar>
         <TabPanel value={value} index={0}>
           <b>Help Needed</b>
