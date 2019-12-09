@@ -4,6 +4,7 @@ import zev from '../components/Pictures/zev.jpg'
 import kameron from '../components/Pictures/kameron.jpg'
 import amit from '../components/Pictures/amit.jpg'
 import andrew from '../components/Pictures/andrew.jpg'
+import '../index.css'
 
 // import test from '../components/Pictures/test.png'
 
@@ -12,47 +13,51 @@ class home extends Component{
     render() {
         return (
           <div class="big-box">
-                     Refuge-Resource is an application for those who are recovering from any type of natural disaster, and those who want to help them. Individuals may post if they have, or require any resources (such as housing, food, medical supplies, etc). Posts are sorted between “Help Needed” and “Help Offered” pages, where they can be further filtered by type of resource. This application was built with React, node.js, and MongoDB. IT was made with the hope that it will improve the ways communities can come together for a common goal. 
-
-
+                <div class="jumbotron">
+                    <span>Refuge-Resource is an application for those who are recovering from any type of natural disaster, and those who want to help them.</span>
+                    <p><span>Individuals may post if they have, or require any resources (such as housing, food, medical supplies, etc).
+                        Posts are sorted between “Help Needed” and “Help Offered” pages, where they can be further filtered by type of resource.</span></p>
+                        This application was built with React, node.js, and MongoDB.
+                        It was made with the hope that it will improve the ways communities can come together for a common goal.
+                </div>
             <section class="developers">
                 <section class="zev">
-                    <section><img src={zev} width="100px" height="100px" alt=""></img></section>
+                    <h4>Zev</h4>
+                    <section><a href="https://github.com/Zevubu"><img src={zev} width="100%" height="100%" alt="Zev"></img></a></section>
                     <section>
-                        <h3>Zev H</h3>
-                        <h5>Github</h5>
+                        <h5><a href="https://github.com/Zevubu">Github</a></h5>
                     </section>
                 </section>
 
                 <section class="mike">
-                    <section><img src={mike} width="100px" height="100px" alt=""></img></section>
+                <h4>Mike</h4>
+                    <section><a href="https://github.com/TheForgeProductions"><img src={mike} width="100%" height="100%" alt="Mike"></img></a></section>
                     <section>
-                        <h3>Mike B</h3>
-                        <h5>Github</h5>
+                        <h5><a href="https://github.com/TheForgeProductions">Github</a></h5>
                     </section>
                 </section>
 
                 <section class="amit">
-                    <section><img src={amit} width="100px" height="100px" alt=""></img></section>
+                <h4>Amit</h4>
+                    <section><a href="https://github.com/asg240"><img src={amit} width="105%" height="105%" alt="Amit"></img></a></section>
                     <section>
-                        <h3>Amit G</h3>
-                        <h5>Github</h5>
+                        <h5><a href="https://github.com/asg240">Github</a></h5>
                     </section>
                 </section>
 
                 <section class="andrew">
-                    <section><img src={andrew} width="100px" height="100px" alt=""></img></section>
+                    <h4>Andrew</h4>
+                    <section><a href="https://github.com/atocchi"><img src={andrew} width="90%" height="100%" alt="Andrew"></img></a></section>
                     <section>
-                        <h3>Andrew T</h3>
-                        <h5>Github</h5>
+                    <h5><a href="https://github.com/atocchi">Github</a></h5>
                     </section>
                 </section>
+
                 <section class="kameron">
-                    <section><img src={kameron} width="100px" height="100px" alt=""></img></section>
-               
+                    <h4>Kam</h4>
+                    <section><a href="https://github.com/kam7933"><img src={kameron} width="95%" height="100%" alt="Kam"></img></a></section>
                     <section>
-                        <h3>Kameron M</h3>
-                        <h5>Github</h5>
+                    <h5><a href="https://github.com/kam7933">Github</a></h5>
                     </section>
                 </section>
                

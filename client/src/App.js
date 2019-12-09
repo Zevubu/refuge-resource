@@ -1,14 +1,15 @@
 
 import React from 'react';
-import './App.css';
+import './index.css';
 import Nav from './components/Nav'
 // import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import OfferedForm from "./pages/forms/offeredForm"
 import Offered from "./offered.js";
 import Needed from "./needed.js";
 import NeededForm from './pages/forms/neededForm';
 import home from './pages/home';
+import logo from './components/Pictures/logo.PNG';
 
 function App() {
 
@@ -19,6 +20,9 @@ function App() {
 
                 <Router>
                     <div>
+                        <div className="homeLink">
+                        <Link to="/"> <img src={logo} width="100%" alt="Refuge-Resource"></img></Link>
+                       </div>
                         <Nav />
                         &nbsp;
                         <Switch>
