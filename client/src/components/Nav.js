@@ -13,19 +13,9 @@ import {
   Link
 } from "react-router-dom";
 import Needed from '../needed'
+import '../index.css'
 
-function Link1 (){
-return <Link to="/needed">Help Needed</Link>
-}
-function Link2 (){
-  return <Link to="/offered">Help Needed</Link>
-  }
-  function Link3 (){
-    return <Link to="/neededForm">Help Needed</Link>
-    }
-    function Link4 (){
-      return <Link to="/offeredForm">Help Needed</Link>
-      }
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -72,6 +62,7 @@ function TabPanel(props) {
   const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
+      borderRadius: 9,
       backgroundColor: theme.palette.background.paper,
     },
   }));
@@ -84,8 +75,10 @@ function TabPanel(props) {
       setValue(newValue);
     };
     
+    
   
     return (
+      
       <div className={classes.root}>
         <AppBar position="static">
           <Tabs

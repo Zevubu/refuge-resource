@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import API from "../../utils/API";
-import ImageUploader from 'react-images-upload';
+// import ImageUploader from 'react-images-upload';
 // import "./cloudinary";
 
 class neededForm extends Component {
@@ -177,7 +177,7 @@ class neededForm extends Component {
               value={this.state.photoLinks}
               onChange={this.handleInputChange}
             />
-          </div>
+          {/* </div>
           <ImageUploader
                 withIcon={true}
                 buttonText='Choose images'
@@ -186,7 +186,7 @@ class neededForm extends Component {
                 maxFileSize={5242880}
             />
 
-          <div>
+          <div> */}
             <label>Link to crowd funding, Venmo, or other payment sites:</label>
             <Input
               type="text"
