@@ -33,21 +33,10 @@ class offeredForm extends Component {
 
     handleRadioChange = event => {
       const { name, checked } = event.target;
-      // if(checked){
-      //   checked === false
-      //   console.log(`checked: ${checked}`)
-      //   this.setState({
-      //     [name]: checked
-      //   });
-      // }
-      // else{
         console.log(`checked: ${checked}`)
         this.setState({
           [name]: checked
         });
-
-      // }
-      
     }
 
     handleFormSubmit = event =>{
@@ -107,6 +96,7 @@ class offeredForm extends Component {
           <div>
             <label>*Name:</label>
             <Input
+              type="text"
               value={this.state.name}
               name="name"
               onChange={this.handleInputChange}
