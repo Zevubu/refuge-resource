@@ -9,20 +9,20 @@ Posts are sorted between “Help Needed” and “Help Offered” pages, where t
 This application was built with React,  node.js, and MongoDB.  
 It was made with the hope that it will improve the ways communities can come together for a common goal. 
 
-###Made by:
+### Made by:
 * Amit Gill
 * Andrew Tocchi,
 * Kameron Malone,
 * Mike Brown,
 * Zev Hoffman
 
-###Made using:
+### Made using:
 * React.js,
 * Material UI,
 * Node.js,
 * MongoDB
 
-###Clip:
+### Clip:
 
 ![snip](client/src/components/Pictures/snip.PNG)
 
