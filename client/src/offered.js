@@ -40,36 +40,14 @@ function Offered() {
         });
 
         const [offer, setOffer] = useState([
-            {
-              "house": true,
-              "dog": false,
-              "cat": false,
-              "med": false,
-              "food": false,
-              "clothing": false,
-              "items": false,
-              "couns": false,
-              "other": false,
-              "img": [
-                "https://dsmpublicartfoundation.org/wp-content/uploads/1970/01/3579-Louis-Vuitton-Crack-House-Jordan-Weber.jpg"
-              ],
-              "_id": "5dd6597e0daaf643eda156e3",
-              "name": "Zevs",
-              "contact": "email@email.com",
-              "location": "oaktown",
-              "roomSize": 2,
-              "stayLength": "3 month",
-              "text": "I have stuff to say!",
-              "more": "string beans and rice!",
-              "__v": 0
-            }
+             {}
         ]);
 
         useEffect(() => {
             async function getPosts () {
             const response = await Axios.get('/api/offered');
-            console.log(response.data)
-            setOffer(response.data);
+            let revArr = response.data.reverse()
+            setOffer(revArr);
         }
         getPosts();
     }, []);
