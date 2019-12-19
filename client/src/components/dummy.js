@@ -13,7 +13,7 @@ import AccessibilityIcon from '@material-ui/icons/Accessibility';
 import BuildIcon from '@material-ui/icons/Build';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
-
+import Mailto from 'react-protected-mailto';
  
 function Dummy(props){
  if ((props.housing === true && props.house === true  )     || 
