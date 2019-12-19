@@ -39,13 +39,15 @@ function Offered() {
             cats: true
         });
 
-        const [offer, setOffer] = useState([]);
+        const [offer, setOffer] = useState([
+             {}
+        ]);
 
         useEffect(() => {
             async function getPosts () {
             const response = await Axios.get('/api/offered');
-            console.log(response.data)
-            setOffer(response.data);
+            let revArr = response.data.reverse()
+            setOffer(revArr);
         }
         getPosts();
     }, []);

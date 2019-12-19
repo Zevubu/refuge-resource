@@ -61,7 +61,8 @@ function Needed() {
             async function getPosts () {
             const response = await Axios.get('/api/needed');
             console.log(response.data)
-            setNeed(response.data);
+            let revArr = response.data.reverse()
+            setNeed(revArr);
         }
         getPosts();
     }, []);
@@ -174,26 +175,11 @@ function Needed() {
                 &nbsp;
           <br></br>
                 <br></br>
-                {search.housing ?
-                    <Chip
-                        icon={<RecordVoiceOverIcon id='counseling' />}
-                        label="Counseling"
-                        id='counseling'
-                        clickable
-                        color="primary"
-                        onClick={handleClick}
-                        variant={search.counseling ? 'default' : 'outlined'}
-                    />
-                    :
-                    ''
+                
 
 
 
-                }
-
-
-
-
+0
                 <hr />
                 {need.map((item, key) =>
 
