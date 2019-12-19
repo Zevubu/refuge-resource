@@ -23,8 +23,57 @@ body {
 .App {
   background-color: rgba(244, 245, 233, 0.918);
   color: black;
-  padding:1% 10% 5% 10%;
+  padding:1% 10% 1% 10%;
   margin:0% 10% 5% 10%;
   border-radius: 2%;
   opacity: .95;
+}
+
+.developers {
+  display:flex;
+  flex-direction: row;  
+  justify-content: space-evenly;
+  margin: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.kameron,
+.mike,
+.amit,
+.andrew,
+.zev {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 100px;
+    height: 250px;
+
+}
+
+
+
+
+.homeLink{
+  color:red;
+  text-decoration: none;
+
+}
+
+img{
+  border-radius: 10px;
+}
+.jumbotron{
+  border-style:groove;
+  border:1;
+  font-style: oblique;
+  border-radius: 8px;
+}
+
+.MuiTabs-flexContainer,
+.MuiButtonBase-root,
+.MuiTab-root,
+.MuiTab-wrapper,
+.MuiTouchRipple-root{
+  border-radius: 8px;
 }

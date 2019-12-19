@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
-import { Input, TextArea, FormBtn } from "../../components/Form"
-import API from "../../utils/API"
-
+import { Input, TextArea, FormBtn } from "../../components/Form";
+import API from "../../utils/API";
+// import ImageUploader from 'react-images-upload';
+// import "./cloudinary";
 
 class neededForm extends Component {
   state = {
-    name:"", //*
-    contactInfo:"",//*
+    name:"",
+    contactInfo:"",
     linkToFund:"",
     familySize:"",
     dogs:false,
     cats:false,
     petInfo:"",
-    currentCity:"",//*
+    currentCity:"",
     willingToRelocate:false,
     housing:false,
     financeSupport:false,
@@ -22,8 +23,9 @@ class neededForm extends Component {
     houseHoldItems:false,
     counsMed: false,
     photoLinks: "",
-    about:"",//*
-    moreInfo:"",  
+    about:"",
+    moreInfo:"", 
+    picture: null 
   };
 
     handleInputChange = event => {
@@ -56,10 +58,7 @@ class neededForm extends Component {
       event.preventDefault();
       console.log(`event: ${event}`);
       console.log(`saved needed: ${JSON.stringify(this.state)}`)
-      if(this.state.photoLinks === ""){
-        this.state.photoLinks = "http://www.macedonrangeshalls.com.au/wp-content/uploads/2017/10/image-not-found.png"
-      }
-      if(this.state.name && this.state.contactInfo && this.state.currentCity && this.state.about){
+      if(this.state.name && this.state.contactInfo){
         API.saveNeeded({
           name:this.state.name,
           contact:this.state.contactInfo,
@@ -105,13 +104,20 @@ class neededForm extends Component {
           .catch(err => console.log(err))
       }
     };
+
+    onDrop = (picture) => {
+      this.setState({
+          picture: picture,
+        });
+      
+  }
     
     render() {
       return(     
       <div>
         <form>
           <div>
-            <label>*Name:</label>
+            <label>Name:</label>
             <Input
               value={this.state.name}
               name="name"
@@ -120,7 +126,7 @@ class neededForm extends Component {
           </div>
             
           <div>
-            <label>*Email address:</label>
+            <label>Email address:</label>
             <Input
               type="text"
               name="contactInfo"
@@ -142,7 +148,7 @@ class neededForm extends Component {
           </div>          
             
           <div>
-            <label>*Current city:</label>
+            <label>Current city:</label>
             <Input
               type="text"
               name="currentCity"
@@ -171,20 +177,16 @@ class neededForm extends Component {
               value={this.state.photoLinks}
               onChange={this.handleInputChange}
             />
-          </div>
-
-          
-
-          <div>
-            <label>*About:</label>
-            <TextArea
-              type="text"
-              name="about"
-              value={this.state.about}
-              onChange={this.handleInputChange}
+          {/* </div>
+          <ImageUploader
+                withIcon={true}
+                buttonText='Choose images'
+                onChange={this.onDrop}
+                imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                maxFileSize={5242880}
             />
-          </div>
-          <div>
+
+          <div> */}
             <label>Link to crowd funding, Venmo, or other payment sites:</label>
             <Input
               type="text"
@@ -193,7 +195,26 @@ class neededForm extends Component {
               onChange={this.handleInputChange}
             />
           </div>
-         
+
+          <div>
+            <label>About:</label>
+            <TextArea
+              type="text"
+              name="about"
+              value={this.state.about}
+              onChange={this.handleInputChange}
+            />
+          </div>
+
+          <div>
+            <label>More Info:</label>
+            <TextArea
+              type="text"
+              name="moreInfo"
+              value={this.state.moreInfo}
+              onChange={this.handleInputChange}
+            />
+          </div>
           <div>
             <h3>Please mark all you may need.</h3>
             <div>
@@ -299,7 +320,7 @@ class neededForm extends Component {
             </div>
 
             <div>
-            <label>Pet Info:</label>
+            <label>Pet Type:</label>
             <Input
               type="text"
               name="petInfo"
@@ -308,18 +329,10 @@ class neededForm extends Component {
             />
             </div>
           </div>
-           <div>
-            <label>More Info:</label>
-            <TextArea
-              type="text"
-              name="moreInfo"
-              value={this.state.moreInfo}
-              onChange={this.handleInputChange}
-            />
-          </div>
+          
 
           <FormBtn
-            disabled={!(this.state.name && this.state.contactInfo && this.state.currentCity && this.state.about)}
+            disabled={!(this.state.name && this.state.contactInfo)}
             onClick={this.handleFormSubmit}
           >
             Submit

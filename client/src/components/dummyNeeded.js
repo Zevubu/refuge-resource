@@ -31,7 +31,7 @@ function DummyNeeded(props){
             <h3>Located @:{props.location}</h3>
 
             <h2>Need:&nbsp;
-                {props.house ? <Chip label='Housing' icon={<HouseIcon />}/> : ''}&nbsp;
+                {props.housing ? <Chip label='Housing' icon={<HouseIcon />}/> : ''}&nbsp;
                 {props.food ? <Chip label='Food' icon={<KitchenIcon/>}/> : ''}&nbsp;
                 {props.clothing ? <Chip label='Clothing' icon={<AccessibilityIcon />}/> : ''}&nbsp;
                 {props.med ? <Chip label='Medical-Supplies' icon={<LocalPharmacyIcon/>}/> : ''}&nbsp;
@@ -47,7 +47,7 @@ function DummyNeeded(props){
 
             <img style={{width:'65%', height:'65%'}}src={props.img} alt={props.alt}/>
             <p>{props.text}</p>
-            <p>Contact: <a href={`mailto:${props.contact}?subject=${props.title}'s%20post`}>{props.contact}</a></p>
+            <p>Contact: <a href={`mailto:${props.contact}?subject=${props.title}'s%20post`}>{props.title}</a></p>
             <hr />
         </div>
     )

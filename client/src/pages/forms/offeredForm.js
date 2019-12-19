@@ -156,7 +156,7 @@ class offeredForm extends Component {
 
           
           <div>
-            <h3>Please mark everything your offereing.</h3>
+            <h3>Please mark everything you're offering.</h3>
             <div>
               <label>Medical Supplies:</label>
               <Input

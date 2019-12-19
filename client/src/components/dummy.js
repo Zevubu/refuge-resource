@@ -14,7 +14,7 @@ import BuildIcon from '@material-ui/icons/Build';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 
 
-
+ 
 function Dummy(props){
  if ((props.housing === true && props.house === true  )     || 
      (props.nutrients === true && props.food === true )     ||

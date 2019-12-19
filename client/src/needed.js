@@ -36,23 +36,24 @@ function Needed() {
         const [need, setNeed] = useState([
             {
                 name:"Jimbo",
-                contactInfo:"jimbo",
+                contact:"jimbo",
                 linkToCFofV:{type:String, required:false},
                 familySize:{ type: Number, default:1},
-                numOfPet:{ type:Number, default:0 },
+                dog:{ type:Boolean, default:false },
+                cat:{ type:Boolean, default:false },
                 petInfo:{ type:String, required: false},
-                currentCity:{ type: String, required:true },
+                location:{ type: String, required:true },
                 willingToRelocate:{ type: Boolean, default:false},
                 housing:{ type:Boolean, default:false },
-                medicalSupplies:{ type: Boolean, default:false},
                 financeSupport: {type:Boolean, default:false},
+                med:{ type: Boolean, default:false},
                 food:{ type: Boolean, default:false},
                 clothing:{ type: Boolean, default:false},
-                houseHoldItems:{ type: Boolean, default:false},
-                counsMed:{ type: Boolean, default:false},
-                photoLinks:[{type:String, required:false}],
-                About: {type:String, required:true},
-                moreInfo:{type:String, required:false}
+                items:{ type: Boolean, default:false},
+                couns:{ type: Boolean, default:false},
+                img:[{type:String, required:false}],
+                text: {type:String, required:true},
+                more:{type:String, required:false}
             }
         ]);
 
@@ -185,7 +186,7 @@ function Needed() {
                     <DummyNeeded
                         key={item.name} title={item.name} text={item.text} img={item.img} location={item.location}
                         house={item.house} food={item.food} clothing={item.clothing} med={item.med} items={item.items}
-                        couns={item.couns} contact={item.contact} roomSize={item.roomSize} stayLength={item.stayLength}
+                        couns={item.couns} contact={item.contact} familySize={item.familySize} stayLength={item.stayLength}
                         dog={item.dog} cat={item.cat}
                         housing={search.housing} nutrients={search.nutrients} clothes={search.clothes} supplies={search.supplies}
                         medical={search.medical} counseling={search.counseling}
