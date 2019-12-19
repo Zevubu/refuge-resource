@@ -45,9 +45,9 @@ function Dummy(props){
                 {props.cat ? <Chip label='Cats' icon={<PetsIcon />} /> : <Chip label='No Cats' icon={<NotInterestedIcon />}/>}  &nbsp;
             </h3> : ''}
 
-            <img style={{width:'65%', height:'65%'}}src={props.img} alt={props.alt}/>
+            <img style={{width:'65%', height:'65%', opacity:'1'}}src={props.img} alt={props.alt}/>
             <p>{props.text}</p>
-            <p>Contact: <a href={props.contact}>{props.contact}</a></p>
+            <p>Contact: <Mailto email={props.contact}></Mailto></p>
             <hr />
         </div>
     )
