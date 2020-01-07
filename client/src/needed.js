@@ -175,11 +175,6 @@ function Needed() {
                 &nbsp;
           <br></br>
                 <br></br>
-                
-
-
-
-0
                 <hr />
                 {need.map((item, key) =>
 
