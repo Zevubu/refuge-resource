@@ -9,6 +9,10 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import Button from '@material-ui/core/Button';
+import {
+  withStyles,
+  makeStyles
+} from '@material-ui/core/styles';
 
 // import ImageUploader from 'react-images-upload';
 // import "./cloudinary";
