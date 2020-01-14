@@ -45,7 +45,7 @@ function DummyNeeded(props){
                 {props.cat ? <Chip label='Cats' icon={<PetsIcon />} /> : <Chip label='No Cats' icon={<NotInterestedIcon />}/>}  &nbsp;
             </h3> : ''}
 
-            <img style={{height:'24em', opacity:'1'}}src={props.img} alt={props.alt}/>
+            <img style={{width:'50%', opacity:'1'}}src={props.img} alt={props.alt}/>
             <p>{props.text}</p>
             <p>Contact: <Mailto email={props.contact}></Mailto></p>
             <hr />
