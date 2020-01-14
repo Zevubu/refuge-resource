@@ -20,7 +20,8 @@ const neededSchema = new Schema({
     couns:{ type: Boolean, default:false},
     img:[{type:String, default:"http://www.macedonrangeshalls.com.au/wp-content/uploads/2017/10/image-not-found.png"}],
     text: {type:String, required:true},
-    more:{type:String, default:""}
+    more:{type:String, default:""},
+    entered:{type: Date, default: new Date()}
 });
 
 const Needed = mongoose.model("Needed", neededSchema);
