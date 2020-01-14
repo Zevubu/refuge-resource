@@ -26,15 +26,5 @@ It was made with the hope that it will improve the ways communities can come tog
 
 ![snip](client/src/components/Pictures/snip.PNG)
 
-Things still to work on:
-    server Zev
-    DB models Zev 
-    email connect to turniaray opereattor. 
-    counsle medical
-    counsMed model
-    report post setting
-    img / s3 bucket
-    emergency service api / https://www.fema.gov/integrated-public-alert-warning-system-open-platform-emergency-networks
-    scrape emerency service twitter
-    form to add to needed and offered
+
     
