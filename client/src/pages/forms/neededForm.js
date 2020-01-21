@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import API from "../../utils/API";
+import axios from 'axios'
 
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -9,13 +10,11 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import Button from '@material-ui/core/Button';
-import {
-  withStyles,
-  makeStyles
-} from '@material-ui/core/styles';
+// import { response } from 'express';
 
 // import ImageUploader from 'react-images-upload';
 // import "./cloudinary";
+// const myRef = useRef({selectedFile: null});
 
 class neededForm extends Component {
   state = {
@@ -48,6 +47,18 @@ class neededForm extends Component {
     });
   }
 
+   uploadHandler = (event) => {
+    event.preventDefault()
+    let upload = this.state.picture
+    const formData = new FormData()
+    formData.append(
+    'myFile',
+     upload,
+     upload.name
+)
+   axios.post('http://localhost:3001/upload', formData)
+  }
+
   handleRadioChange = event => {
     const { name, checked } = event.target;
     // if(checked){
@@ -66,9 +77,13 @@ class neededForm extends Component {
     // }
 
   }
+  fileChangedHandler = event => {
+    this.setState({ picture: event.target.files[0] })
+  }
 
   handleFormSubmit = event => {
-    event.preventDefault();
+    // event.preventDefault();
+    // this.uploadHandler()
     console.log(`event: ${event}`);
     console.log(`saved needed: ${JSON.stringify(this.state)}`)
     if (this.state.name && this.state.contactInfo) {
@@ -92,7 +107,7 @@ class neededForm extends Component {
         img: this.state.photoLinks,
         text: this.state.about,
         more: this.state.moreInfo
-      })
+      }).then(response => alert(`Thank you ${this.state.name} you post has been entered sucessfully`))
         .then(res => this.setState({
           name: "",
           contactInfo: "",
@@ -181,14 +196,16 @@ class neededForm extends Component {
             />
           </div>
 
-          <div>
-            <TextField
+          <div>Provide Image 
+          <input type="file" onChange={this.fileChangedHandler}/>
+          <button onClick={this.uploadHandler}>Upload!</button>
+            {/* <TextField
               label="Link to Photo:"
               type="text"
               name="photoLinks"
               value={this.state.photoLinks}
               onChange={this.handleInputChange}
-            />
+            /> */}
           </div>
           {/* <ImageUploader
                 withIcon={true}
